@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+  milvus:
+    image: milvusdb/milvus:v2.4.0
+    container_name: milvus
+    command: ["milvus", "run", "standalone"]
+    environment:
+      ETCD_USE_EMBED: true
+      ETCD_DATA_DIR: /var/lib/milvus/etcd
+      COMMON_STORAGETYPE: local
+    ports:
+      - "19530:19530"   # Milvus数据库服务端口
+      - "9091:9091"     # Milvus控制台 管理端口（Milvus的Dashboard/监控）
+    volumes:
+      - ./milvus_data:/var/lib/milvus  # 本地持久化
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"   # Ollama API 服务端口
+    volumes:
+      - ollama_data:/root/.ollama  # Ollama 模型缓存
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  app:
+    build: .            # 当前目录下的Dockerfile
+    container_name: langchain-app
+    volumes:
+      - .:/app          # 当前目录挂载到容器 确保当前代码同步到容器内
+    ports:
+      - "8000:8000"     # FastAPI服务端口
+    depends_on:
+      milvus:
+        condition: service_healthy  # 等待 milvus 健康检查通过
+    restart: unless-stopped
+
+volumes:
+  ollama_data:

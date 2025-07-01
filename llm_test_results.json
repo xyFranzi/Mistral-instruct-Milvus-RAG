@@ -1,0 +1,152 @@
+{
+  "overall_score": 0.8500000000000001,
+  "tool_selection": {
+    "accuracy": 0.875,
+    "correct": 7,
+    "total": 8,
+    "by_type": {
+      "概念定义": {
+        "correct": 2,
+        "total": 2
+      },
+      "概念解释": {
+        "correct": 1,
+        "total": 1
+      },
+      "具体步骤": {
+        "correct": 1,
+        "total": 1
+      },
+      "具体信息": {
+        "correct": 1,
+        "total": 1
+      },
+      "具体位置": {
+        "correct": 1,
+        "total": 1
+      },
+      "概念比较": {
+        "correct": 0,
+        "total": 1
+      },
+      "问题解决": {
+        "correct": 1,
+        "total": 1
+      }
+    },
+    "details": [
+      {
+        "question": "Was ist künstliche Intelligenz?",
+        "expected": "SimilaritySearch",
+        "actual": "SimilaritySearch",
+        "correct": true,
+        "question_type": "概念定义",
+        "tokens_used": 246
+      },
+      {
+        "question": "Was ist maschinelles Lernen?",
+        "expected": "SimilaritySearch",
+        "actual": "SimilaritySearch",
+        "correct": true,
+        "question_type": "概念定义",
+        "tokens_used": 246
+      },
+      {
+        "question": "Erklären Sie Deep Learning",
+        "expected": "SimilaritySearch",
+        "actual": "SimilaritySearch",
+        "correct": true,
+        "question_type": "概念解释",
+        "tokens_used": 243
+      },
+      {
+        "question": "Wie installiere ich Python?",
+        "expected": "QA",
+        "actual": "QA",
+        "correct": true,
+        "question_type": "具体步骤",
+        "tokens_used": 242
+      },
+      {
+        "question": "Was sind die Systemanforderungen?",
+        "expected": "QA",
+        "actual": "QA",
+        "correct": true,
+        "question_type": "具体信息",
+        "tokens_used": 244
+      },
+      {
+        "question": "Wo finde ich die Dokumentation?",
+        "expected": "QA",
+        "actual": "QA",
+        "correct": true,
+        "question_type": "具体位置",
+        "tokens_used": 245
+      },
+      {
+        "question": "Was ist der Unterschied zwischen AI und ML?",
+        "expected": "SimilaritySearch",
+        "actual": "QA",
+        "correct": false,
+        "question_type": "概念比较",
+        "tokens_used": 246
+      },
+      {
+        "question": "Wie löse ich Fehler XYZ?",
+        "expected": "QA",
+        "actual": "QA",
+        "correct": true,
+        "question_type": "问题解决",
+        "tokens_used": 248
+      }
+    ]
+  },
+  "instruction_following": {
+    "format_rate": 0.6666666666666666,
+    "answer_rate": 0.6666666666666666,
+    "format_correct": 2,
+    "answer_correct": 2,
+    "total": 3,
+    "details": [
+      {
+        "instruction": "Antworte nur mit 'JA' oder 'NEIN'",
+        "question": "Ist Python eine Programmiersprache?",
+        "expected": "JA",
+        "actual": "JA",
+        "follows_format": true,
+        "correct_answer": true,
+        "tokens_used": 35
+      },
+      {
+        "instruction": "Antworte nur mit einer Zahl zwischen 1-5",
+        "question": "Wie schwer ist Python zu lernen? (1=sehr leicht, 5=sehr schwer)",
+        "expected": null,
+        "actual": "3",
+        "follows_format": true,
+        "correct_answer": true,
+        "tokens_used": 52
+      },
+      {
+        "instruction": "Antworte nur mit dem Werkzeugnamen",
+        "question": "Für die Frage 'Was ist AI?' - SimilaritySearch oder QA?",
+        "expected": "SimilaritySearch",
+        "actual": "QA (Question Answering)",
+        "follows_format": false,
+        "correct_answer": false,
+        "tokens_used": 45
+      }
+    ]
+  },
+  "consistency": {
+    "results": [
+      "SimilaritySearch",
+      "SimilaritySearch",
+      "SimilaritySearch",
+      "SimilaritySearch",
+      "SimilaritySearch"
+    ],
+    "consistency_rate": 1.0,
+    "most_common_answer": "SimilaritySearch"
+  },
+  "test_duration": 29.594151735305786
+}
