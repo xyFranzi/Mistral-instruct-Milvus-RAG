@@ -29,7 +29,15 @@ class MilvusSimilaritySearchTool(BaseTool):
         "Führe semantische Ähnlichkeitssuche in der lokalen Milvus-Lite-Datenbank durch. "
         "Eingabe: Query-String; Ausgabe: JSON mit Dokumentfragmenten und Scores."
     )
-    client: MilvusClient = PrivateAttr()
+
+    collection_name: str
+    embedding_model: str
+    embedding_device: str
+    k: int
+
+    _client: MilvusClient = PrivateAttr()
+    _embedder: HuggingFaceEmbeddings = PrivateAttr()
+
 
     def __init__(
         self,
@@ -39,13 +47,18 @@ class MilvusSimilaritySearchTool(BaseTool):
         embedding_device: str = "cpu",
         k: int = 3
     ):
-        super().__init__()
-        # Pfad zur DB anlegen und Client initialisieren
+        super().__init__(
+            collection_name=collection_name,
+            embedding_model=embedding_model,
+            embedding_device=embedding_device,
+            k=k
+        )
         os.makedirs(os.path.dirname(db_path), exist_ok=True)
-        self.client = MilvusClient(db_path)
-        self.collection_name = collection_name
+        self._client = MilvusClient(db_path)
+        # self.collection_name = collection_name
+
         # Embedding-Modell laden
-        self.embedding = HuggingFaceEmbeddings(
+        self._embedder = HuggingFaceEmbeddings(
             model_name=embedding_model,
             model_kwargs={"device": embedding_device}
         )
@@ -60,9 +73,9 @@ class MilvusSimilaritySearchTool(BaseTool):
         Führt semantische Suche mit MilvusClient auf local .db durch und formatiert JSON-Ausgabe.
         """
         # Query einbetten
-        query_embedding = self.embedding.embed_query(query)
+        query_embedding = self._embedder.embed_query(query)
         # Suche ausführen
-        results = self.client.search(
+        results = self._client.search(
             collection_name=self.collection_name,
             data=[query_embedding],
             limit=self.k,
@@ -123,7 +136,12 @@ class RAGToolIntegrationTester:
                 self.system_prompt + "\nDokumente:\n" + tool_output +
                 f"\nBeantworte die Frage: {query}"
             )
-            response = self.llm(prompt)
+            # Convert prompt to a list of HumanMessage objects
+            messages = [
+                SystemMessage(content=self.system_prompt),
+                HumanMessage(content=f"Dokumente:\n{tool_output}\nBeantworte die Frage: {query}")
+            ]
+            response = self.llm.invoke(messages)
             print("LLM-Antwort:")
             print(response)
 
