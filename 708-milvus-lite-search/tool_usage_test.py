@@ -16,45 +16,7 @@ from langchain_core.documents import Document
 import json
 import os
 from pymilvus import MilvusClient
-
-# db_path = os.path.expanduser("~/mypython/Mistral-instruct-Milvus-RAG/milvus_german_docs.db")
-# os.makedirs(os.path.dirname(db_path), exist_ok=True)
-# client = MilvusClient(db_path)
-# collection_name = "german_docs"
-
-# # Load embedding model
-# hf_embeddings = HuggingFaceEmbeddings(
-#     model_name="aari1995/German_Semantic_V3b",
-#     model_kwargs={"device": "cpu"}  # or "cuda" if you have GPU
-# )
-
-# # Example search
-# def search_documents(query, top_k=3):
-#     query_embedding = hf_embeddings.embed_query(query)
-    
-#     results = client.search(
-#         collection_name=collection_name,
-#         data=[query_embedding],
-#         limit=top_k,
-#         output_fields=["text", "source"]
-#     )
-    
-#     return results[0] 
-
-# query = "Wer ist Raymond?"
-# results = search_documents(query, top_k=3)
-# print(f"\nSuche nach: '{query}'")
-# print("-" * 50)
-
-# for i, result in enumerate(results, 1):
-#     print(f"Ergebnis {i}:")
-#     print(f"Text: {result['entity']['text']}")
-#     print(f"Quelle: {result['entity']['source']}")
-#     print(f"Ähnlichkeit: {result['distance']:.4f}")
-#     print("-" * 30)
-
-# # Close client
-# client.close()
+from pydantic import PrivateAttr
 
 class MilvusSimilaritySearchTool(BaseTool):
     """
@@ -67,6 +29,7 @@ class MilvusSimilaritySearchTool(BaseTool):
         "Führe semantische Ähnlichkeitssuche in der lokalen Milvus-Lite-Datenbank durch. "
         "Eingabe: Query-String; Ausgabe: JSON mit Dokumentfragmenten und Scores."
     )
+    client: MilvusClient = PrivateAttr()
 
     def __init__(
         self,
@@ -123,3 +86,74 @@ class MilvusSimilaritySearchTool(BaseTool):
             "search_type": "semantic_similarity"
         }
         return json.dumps(output, ensure_ascii=False, indent=2)
+    
+
+class RAGToolIntegrationTester:
+    def __init__(self, model_name: str):
+        self.model_name = model_name
+        self.llm = ChatOllama(
+            model=self.model_name,
+            temperature=0.1,
+            num_predict= 512 # limit output length
+        )
+        self.similarity_search_tool = MilvusSimilaritySearchTool()
+
+        self.system_prompt = """
+        Du bist ein KI-Assistent, der Fragen zu deutschen Texten beantworten kann.
+        Du hast Zugriff auf eine lokale Milvus-Lite-Datenbank, die deutsche Dokumente enthält.
+        Deine Aufgabe: Nutze die bereitgestellten Dokumente und beantworte die Frage präzise.
+        """
+
+        self.test_query = [
+            "Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?",
+            "Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?",
+            "Was ist der Haputstadt von Deutschland?",
+            "Was ist der Unterschied zwischen einem Hund und einer Katze?",
+        ]
+    
+    def test_workflow(self):
+        for query in self.test_query:
+            print(f"\n{'-'*20}\nTestanfrage: {query}")
+            # Semantische Suche
+            tool_output = self.similarity_search_tool._run(query)
+            print("Ähnlichkeitssuche-Ergebnis:")
+            print(tool_output)
+            # LLM-Antwort generieren
+            prompt = (
+                self.system_prompt + "\nDokumente:\n" + tool_output +
+                f"\nBeantworte die Frage: {query}"
+            )
+            response = self.llm(prompt)
+            print("LLM-Antwort:")
+            print(response)
+
+    def run_comprehensive_test(self):
+        print(f"Testing model: {self.model_name}")
+        print("=" * 20)
+
+        overall_start = time.time()
+
+        self.test_workflow()
+
+        total_time = time.time() - overall_start
+
+        print(f"\nTotal time for all tests: {total_time:.2f} seconds")
+        print("=" * 20)
+
+
+if __name__ == "__main__":
+    # Multiple models can be tested here
+    models_to_test = [
+        "mistral:7b-instruct-v0.3-q5_0",
+        "mistral-small:24b",
+        # "xxx",
+    ]
+    
+    for model in models_to_test:
+        print(f"\n{'='*20} Testing model: {model} {'='*20}")
+        tester = RAGToolIntegrationTester(model)
+        tester.run_comprehensive_test()
+        
+        if len(models_to_test) > 1:
+            print(f"\n...")
+            time.sleep(5)
