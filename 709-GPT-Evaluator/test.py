@@ -8,7 +8,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 response = client.responses.create(
     model="gpt-4.1",
     tools=[{"type": "web_search_preview"}],
-    input="What was a positive news story from today?"
+    input="Tell me about the women's EURO 2024 current results and standings."
 )
 
 print(response.output_text)
