@@ -1,2 +1,4 @@
 .venv/
 30-integrate-milvus-docker/milvus_data/
+config.py
+__pycache__/
