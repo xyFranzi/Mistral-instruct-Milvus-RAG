@@ -17,6 +17,7 @@ import json
 import os
 from pymilvus import MilvusClient
 from pydantic import PrivateAttr
+from datetime import datetime
 
 class MilvusSimilaritySearchTool(BaseTool):
     """
@@ -125,17 +126,36 @@ class RAGToolIntegrationTester:
         ]
     
     def test_workflow(self):
-        for query in self.test_query:
-            print(f"\n{'-'*20}\nTestanfrage: {query}")
+        test_results = {
+            "test_run_timestamp": datetime.now().isoformat(),
+            "total_queries": len(self.test_query),
+            "results": []
+        }
+        
+        for i, query in enumerate(self.test_query, 1):
+            print(f"\n{'-'*80}")
+            print(f"\nTest {i}/{len(self.test_query)}")
+            print(f"\nTestanfrage: {query}")
+
             # Semantische Suche
             tool_output = self.similarity_search_tool._run(query)
+
+            if isinstance(tool_output, str):
+                try:
+                    search_result = json.loads(tool_output)
+                except json.JSONDecodeError:
+                    search_result = {"raw_output": tool_output}
+            else:
+                search_result = tool_output
+
             print("Ähnlichkeitssuche-Ergebnis:")
-            print(tool_output)
+            # print(tool_output)
+            print(f"Found {search_result.get('found_documents')} documents")
             # LLM-Antwort generieren
-            prompt = (
-                self.system_prompt + "\nDokumente:\n" + tool_output +
-                f"\nBeantworte die Frage: {query}"
-            )
+            # prompt = (
+            #     self.system_prompt + "\nDokumente:\n" + tool_output +
+            #     f"\nBeantworte die Frage: {query}"
+            # )
             # Convert prompt to a list of HumanMessage objects
             messages = [
                 SystemMessage(content=self.system_prompt),
@@ -143,7 +163,44 @@ class RAGToolIntegrationTester:
             ]
             response = self.llm.invoke(messages)
             print("LLM-Antwort:")
-            print(response)
+            print(response.content)
+
+            # filter LLM-Antwort
+            llm_response = {
+                "content": response.content,
+                "model": response.response_metadata.get('model', 'unknown'),
+                "tokens": {
+                    "input": response.usage_metadata.get('input_tokens', 0),
+                    "output": response.usage_metadata.get('output_tokens', 0),
+                    "total": response.usage_metadata.get('total_tokens', 0)
+                },
+                "timing": {
+                    "total_duration_ms": response.response_metadata.get('total_duration', 0) / 1000000,  # Convert to ms
+                    "eval_duration_ms": response.response_metadata.get('eval_duration', 0) / 1000000
+                }
+            }
+
+            query_result = {
+                "query_id": i,
+                "query": query,
+                "similarity_search": {
+                    "found_documents": search_result.get('found_documents', 0),
+                    "documents": search_result.get('documents', [])
+                },
+                "llm_response": llm_response,
+                "timestamp": datetime.now().isoformat()
+            }
+        
+            test_results["results"].append(query_result)
+        
+        output_filename = f"{self.model_name}_test_results_{datetime.now().strftime('%Y%m%d_%H%M')}.json"
+        print(f"\nErgebnisse werden in '{output_filename}' gespeichert.")
+
+        with open(output_filename, 'w', encoding='utf-8') as f:
+            json.dump(test_results, f, indent=2, ensure_ascii=False)
+
+        return test_results
+        
 
     def run_comprehensive_test(self):
         print(f"Testing model: {self.model_name}")
@@ -163,7 +220,7 @@ if __name__ == "__main__":
     # Multiple models can be tested here
     models_to_test = [
         "mistral:7b-instruct-v0.3-q5_0",
-        "mistral-small:24b",
+        # "mistral-small:24b",
         # "xxx",
     ]
     
