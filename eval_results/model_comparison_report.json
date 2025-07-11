@@ -1,5 +1,5 @@
 {
-  "comparison_timestamp": "2025-07-11T03:55:19.862971",
+  "comparison_timestamp": "2025-07-11T04:06:17.992200",
   "models_compared": [
     {
       "model": "mistral-small:24b",
@@ -26,8 +26,8 @@
         "count": 4
       },
       "accuracy": {
-        "average": 4.75,
-        "min": 4,
+        "average": 5.0,
+        "min": 5,
         "max": 5,
         "count": 4
       },
@@ -44,7 +44,7 @@
         "count": 4
       },
       "use_of_context": {
-        "average": 4.5,
+        "average": 4.75,
         "min": 4,
         "max": 5,
         "count": 4
@@ -62,8 +62,8 @@
         "count": 4
       },
       "overall_score": {
-        "average": 4.68,
-        "min": 4.3,
+        "average": 4.75,
+        "min": 4.29,
         "max": 5.0,
         "count": 4
       }
@@ -82,7 +82,7 @@
         "count": 4
       },
       "completeness": {
-        "average": 3.5,
+        "average": 3.75,
         "min": 3,
         "max": 5,
         "count": 4
@@ -112,9 +112,9 @@
         "count": 4
       },
       "overall_score": {
-        "average": 4.29,
-        "min": 3.71,
-        "max": 5,
+        "average": 4.32,
+        "min": 3.86,
+        "max": 5.0,
         "count": 4
       }
     },

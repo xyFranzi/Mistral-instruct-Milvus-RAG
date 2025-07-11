@@ -86,7 +86,7 @@ class LLMResponseEvaluator:
         )
         
         evaluation_text = response.choices[0].message.content
-        print(f"Raw GPT response: {evaluation_text[:200]}...")  # Debug output
+        # print(f"Raw GPT response: {evaluation_text[:200]}...")
         
         # Find JSON in the response
         start_idx = evaluation_text.find('{')
@@ -141,7 +141,7 @@ class LLMResponseEvaluator:
             llm_response = result.get("llm_response", {}).get("content", "")
             model_name = result.get("llm_response", {}).get("model", "unknown")
             
-            print(f"  Evaluating query {result.get('query_id', 'unknown')}: {query[:50]}...")
+            print(f"  Evaluating query {result.get('query_id', 'unknown')}: {query[:20]}...")
             
             evaluation = self.evaluate_response(query, documents, llm_response, model_name)
             
@@ -219,16 +219,12 @@ class LLMResponseEvaluator:
         """
         json_files = list(self.test_results_dir.glob("*.json"))
         
-        if not json_files:
-            print("No JSON files found in test_results directory")
-            return
-        
         print(f"Found {len(json_files)} test result files to process")
         
         for json_file in json_files:
             evaluated_results = self.process_test_results_file(json_file)
             self.save_evaluation_results(evaluated_results)
-            print(f"✓ Successfully processed {json_file.name}")
+            print(f"Processed {json_file.name}")
             print()
     
     def generate_comparison_report(self):
@@ -236,10 +232,6 @@ class LLMResponseEvaluator:
         Generate a comparison report across all evaluated models
         """
         eval_files = list(self.eval_results_dir.glob("*_gpt_evaluation.json"))
-        
-        if not eval_files:
-            print("No evaluation files found to compare")
-            return
         
         comparison_data = {
             "comparison_timestamp": datetime.now().isoformat(),
@@ -274,17 +266,10 @@ class LLMResponseEvaluator:
 
 def main():
     evaluator = LLMResponseEvaluator()
-    
-    print("=== LLM Response Evaluator using GPT-4o ===")
-    print(f"Test results directory: {evaluator.test_results_dir}")
-    print(f"Evaluation results directory: {evaluator.eval_results_dir}")
-    print()
-    
     # Process all test result files
     evaluator.process_all_test_results()
     
     # Generate comparison report
-    print("Generating comparison report...")
     evaluator.generate_comparison_report()
     
     print("=== Evaluation Complete ===")
