@@ -124,6 +124,10 @@ class RAGToolIntegrationTester:
             "Was ist der Haputstadt von Deutschland?",
             "Was ist der Unterschied zwischen einem Hund und einer Katze?",
         ]
+
+        # self.test_query = [
+        #     "Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?",
+        # ]
     
     def test_workflow(self):
         test_results = {
@@ -193,8 +197,10 @@ class RAGToolIntegrationTester:
         
             test_results["results"].append(query_result)
         
-        output_filename = f"{self.model_name}_test_results_{datetime.now().strftime('%Y%m%d_%H%M')}.json"
+        output_filename = os.path.join("test_results", f"{self.model_name}_test_results_{datetime.now().strftime('%Y%m%d_%H%M')}.json")
         print(f"\nErgebnisse werden in '{output_filename}' gespeichert.")
+
+        os.makedirs("test_results", exist_ok=True)  # Ensure the folder exists
 
         with open(output_filename, 'w', encoding='utf-8') as f:
             json.dump(test_results, f, indent=2, ensure_ascii=False)
@@ -220,8 +226,8 @@ if __name__ == "__main__":
     # Multiple models can be tested here
     models_to_test = [
         "mistral:7b-instruct-v0.3-q5_0",
-        # "mistral-small:24b",
-        # "xxx",
+        "mistral-small:24b",
+        "qwen3:8b",
     ]
     
     for model in models_to_test:

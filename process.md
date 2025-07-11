@@ -12,6 +12,8 @@ response time - slow (CPU all 100%)
 
 more model: Qwen 3 / Llama 4 (huge)
 
+more doc and correspondent query edits
+
 more query - consistency
 
 responce quality -  how to exactly measure and compare? GPT-Evaluator?

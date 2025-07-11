@@ -1,0 +1,158 @@
+{
+  "test_run_timestamp": "2025-07-10T23:16:24.470536",
+  "total_queries": 4,
+  "results": [
+    {
+      "query_id": 1,
+      "query": "Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?",
+      "similarity_search": {
+        "found_documents": 3,
+        "documents": [
+          {
+            "score": 379.468994140625,
+            "source": "der_fremde_wiki_inhalt_0.pdf",
+            "content": "Der Roman erzählt die Geschichte eines introvertierten Mannes namens Meursault. Er hat einen Totschlag begangen und wartet in seiner Gefängniszelle auf die Hinrichtung. Die Handlung spielt im Algerien der 1930er Jahre. Der Name Meursault ist möglicherweise von „Meurs, sot!“, zu Deutsch etwa „Stirb, (du) Trottel!“, abgeleitet."
+          },
+          {
+            "score": 329.11651611328125,
+            "source": "der_fremde_wiki_inhalt_1.pdf",
+            "content": "Der Roman ist in zwei Teile gegliedert. Der erste Teil beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ Bei der Beerdigung seiner Mutter zeigt Meursault keine Emotionen. Die fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis, das zwischen Mutter und Sohn herrschte. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort."
+          },
+          {
+            "score": 325.1319885253906,
+            "source": "der_fremde_wiki_inhalt_2.pdf",
+            "content": "Meursault zeigt sich als Mensch, der antriebslos in den Tag hineinlebt, der zwar Details seiner Umgebung wahrnimmt, jedoch Gewalt und Ungerechtigkeit ungerührt hinnimmt. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Meursault ist offenbar zufrieden, wenn sein Alltag routinemäßig und wie gewohnt verläuft."
+          }
+        ]
+      },
+      "llm_response": {
+        "content": " Meursault ist der Protagonist des Romans \"Der Fremde\". Er ist ein introvertierter Mann, der in Algerien der 1930er Jahre lebt. In der Handlung des Romans hat er einen Totschlag begangen und wartet in seiner Gefängniszelle auf die Hinrichtung. Er zeigt sich als Mensch, der antriebslos in den Tag hineinlebt und zwar Gewalt und Ungerechtigkeit ungerührt hinnimmt.",
+        "model": "mistral:7b-instruct-v0.3-q5_0",
+        "tokens": {
+          "input": 746,
+          "output": 116,
+          "total": 862
+        },
+        "timing": {
+          "total_duration_ms": 85418.939602,
+          "eval_duration_ms": 16018.414736
+        }
+      },
+      "timestamp": "2025-07-10T23:17:51.167412"
+    },
+    {
+      "query_id": 2,
+      "query": "Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?",
+      "similarity_search": {
+        "found_documents": 3,
+        "documents": [
+          {
+            "score": 334.2140808105469,
+            "source": "der_fremde_wiki_inhalt_2.pdf",
+            "content": "Meursault zeigt sich als Mensch, der antriebslos in den Tag hineinlebt, der zwar Details seiner Umgebung wahrnimmt, jedoch Gewalt und Ungerechtigkeit ungerührt hinnimmt. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Meursault ist offenbar zufrieden, wenn sein Alltag routinemäßig und wie gewohnt verläuft."
+          },
+          {
+            "score": 309.52435302734375,
+            "source": "der_fremde_wiki_inhalt_0.pdf",
+            "content": "Der Roman erzählt die Geschichte eines introvertierten Mannes namens Meursault. Er hat einen Totschlag begangen und wartet in seiner Gefängniszelle auf die Hinrichtung. Die Handlung spielt im Algerien der 1930er Jahre. Der Name Meursault ist möglicherweise von „Meurs, sot!“, zu Deutsch etwa „Stirb, (du) Trottel!“, abgeleitet."
+          },
+          {
+            "score": 307.1035461425781,
+            "source": "der_fremde_wiki_inhalt_1.pdf",
+            "content": "Der Roman ist in zwei Teile gegliedert. Der erste Teil beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ Bei der Beerdigung seiner Mutter zeigt Meursault keine Emotionen. Die fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis, das zwischen Mutter und Sohn herrschte. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort."
+          }
+        ]
+      },
+      "llm_response": {
+        "content": " In dem Roman 'Der Fremde' von Albert Camus wird der Existentialismus und das Gefühl der Absurdität durch den Charakter Meursault dargestellt. Meursault lebt antriebslos, ungerührt hinnimmt er Gewalt und Ungerechtigkeit und zeigt keine emotionale Anteilnahme an wichtigen Ereignissen wie z.B. der Beerdigung seiner Mutter. Dies deutet darauf hin, dass er sein Leben ohne große Ziele oder Sinnsuche lebt, was ein typisches Merkmal des Existentialismus ist. Das Gefühl der Absurdität wird durch Meursaults Kälte und Indifferenz gegenüber den Umständen illustriert, die ihn umgeben. Er scheint nicht zu verstehen oder sich mit dem Sinn von Dingen auseinanderzusetzen, was als eine Form der Absurdität interpretiert werden kann.",
+        "model": "mistral:7b-instruct-v0.3-q5_0",
+        "tokens": {
+          "input": 762,
+          "output": 217,
+          "total": 979
+        },
+        "timing": {
+          "total_duration_ms": 87714.983736,
+          "eval_duration_ms": 30619.449551
+        }
+      },
+      "timestamp": "2025-07-10T23:19:19.043914"
+    },
+    {
+      "query_id": 3,
+      "query": "Was ist der Haputstadt von Deutschland?",
+      "similarity_search": {
+        "found_documents": 3,
+        "documents": [
+          {
+            "score": 265.266845703125,
+            "source": "der_fremde_wiki_inhalt_0.pdf",
+            "content": "Der Roman erzählt die Geschichte eines introvertierten Mannes namens Meursault. Er hat einen Totschlag begangen und wartet in seiner Gefängniszelle auf die Hinrichtung. Die Handlung spielt im Algerien der 1930er Jahre. Der Name Meursault ist möglicherweise von „Meurs, sot!“, zu Deutsch etwa „Stirb, (du) Trottel!“, abgeleitet."
+          },
+          {
+            "score": 229.4612274169922,
+            "source": "der_fremde_wiki_inhalt_3.pdf",
+            "content": "Sein Nachbar, Raymond Sintès, der der Zuhälterei verdächtigt wird, freundet sich mit ihm an. Meursault hilft Raymond, eine Mätresse, eine Araberin, die er als ehemalige Freundin ausgibt, anzulocken. Raymond bedrängt und demütigt die Frau. Später begegnen Meursault und Raymond dem Bruder der Frau und dessen Freunden am Strand, es kommt zu einer Schlägerei. Kurz danach trifft Meursault einen der Araber wieder, der bei seinem Anblick ein Messer zieht. Vom Glanz der Sonne auf der Messerklinge geblendet, umklammert Meursault in seiner Jackentasche einen von Raymond ausgeliehenen Revolver, zückt die Waffe und tötet den Araber mit einem Schuss. Ohne besonderen Grund gibt er unmittelbar darauf vier weitere Schüsse auf den Leichnam ab, was vor Gericht zum Ausschluss von Notwehr und unbeabsichtigtem Totschlag und letztlich zur Verurteilung Meursaults als Mörder führt. Meursaults mögliche Unzurechnungsfähigkeit nach Stunden in praller Sonne steht im Raum."
+          },
+          {
+            "score": 210.5294189453125,
+            "source": "der_fremde_ch1_1.pdf",
+            "content": "Heute ist Mama gestorben. Vielleicht auch gestern, ich weiß nicht. Ich habe ein Telegramm vom Heim bekommen: «Mutter verstorben. Beisetzung morgen. Hochachtungsvoll.» Das will nichts heißen. Es war vielleicht gestern. Das Altersheim ist in Marengo, achtzig Kilometer von Algier entfernt. Ich werde den Bus um zwei nehmen und nachmittags ankommen. Auf die Weise kann ich Totenwache halten und bin morgen Abend wieder zurück. Ich habe meinen Chef um zwei Tage Urlaub gebeten, und bei so einem Entschuldigungsgrund konnte er sie mir nicht abschlagen. Aber er sah nicht erfreut aus. Ich habe sogar gesagt: «Es ist nicht meine Schuld.» Er hat nicht geantwortet. Da habe ich gedacht, dass ich das nicht hätte sagen sollen. Ich brauchte mich ja nicht zu entschuldigen. Vielmehr hätte er mir sein Beileid aussprechen müssen. Aber das wird er wahrscheinlich übermorgen tun, wenn er mich in Trauer sieht. Vorläufig ist es ein bisschen so, als wäre Mama gar nicht tot. Nach der Beerdigung allerdings wird es eine abgeschlossene Sache sein, und alles wird einen offizielleren Anstrich bekommen haben."
+          }
+        ]
+      },
+      "llm_response": {
+        "content": " Die Antwort auf die Frage \"Was ist der Haputstadt von Deutschland?\" ist nicht in den bereitgestellten Dokumenten enthalten. Es handelt sich um eine fiktive Geschichte, die in Algerien spielt und hat keine Bezüge zu deutschen Städten oder Regionen.",
+        "model": "mistral:7b-instruct-v0.3-q5_0",
+        "tokens": {
+          "input": 1111,
+          "output": 68,
+          "total": 1179
+        },
+        "timing": {
+          "total_duration_ms": 99116.550405,
+          "eval_duration_ms": 9255.356878
+        }
+      },
+      "timestamp": "2025-07-10T23:20:58.326269"
+    },
+    {
+      "query_id": 4,
+      "query": "Was ist der Unterschied zwischen einem Hund und einer Katze?",
+      "similarity_search": {
+        "found_documents": 3,
+        "documents": [
+          {
+            "score": 243.75479125976562,
+            "source": "der_fremde_wiki_inhalt_1.pdf",
+            "content": "Der Roman ist in zwei Teile gegliedert. Der erste Teil beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ Bei der Beerdigung seiner Mutter zeigt Meursault keine Emotionen. Die fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis, das zwischen Mutter und Sohn herrschte. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort."
+          },
+          {
+            "score": 241.03213500976562,
+            "source": "der_fremde_wiki_inhalt_2.pdf",
+            "content": "Meursault zeigt sich als Mensch, der antriebslos in den Tag hineinlebt, der zwar Details seiner Umgebung wahrnimmt, jedoch Gewalt und Ungerechtigkeit ungerührt hinnimmt. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Meursault ist offenbar zufrieden, wenn sein Alltag routinemäßig und wie gewohnt verläuft."
+          },
+          {
+            "score": 240.48513793945312,
+            "source": "der_fremde_wiki_inhalt_3.pdf",
+            "content": "Sein Nachbar, Raymond Sintès, der der Zuhälterei verdächtigt wird, freundet sich mit ihm an. Meursault hilft Raymond, eine Mätresse, eine Araberin, die er als ehemalige Freundin ausgibt, anzulocken. Raymond bedrängt und demütigt die Frau. Später begegnen Meursault und Raymond dem Bruder der Frau und dessen Freunden am Strand, es kommt zu einer Schlägerei. Kurz danach trifft Meursault einen der Araber wieder, der bei seinem Anblick ein Messer zieht. Vom Glanz der Sonne auf der Messerklinge geblendet, umklammert Meursault in seiner Jackentasche einen von Raymond ausgeliehenen Revolver, zückt die Waffe und tötet den Araber mit einem Schuss. Ohne besonderen Grund gibt er unmittelbar darauf vier weitere Schüsse auf den Leichnam ab, was vor Gericht zum Ausschluss von Notwehr und unbeabsichtigtem Totschlag und letztlich zur Verurteilung Meursaults als Mörder führt. Meursaults mögliche Unzurechnungsfähigkeit nach Stunden in praller Sonne steht im Raum."
+          }
+        ]
+      },
+      "llm_response": {
+        "content": " Ich habe versucht, eine Antwort auf Ihre Frage zu finden, indem ich in meiner lokalen Milvus-Lite-Datenbank nach Dokumenten suchte, die sich mit dem Thema \"Hund\" und \"Katze\" befassen. Es gibt jedoch keine passenden Ergebnisse in den bereitgestellten Dokumenten. Die angegebenen Texte handeln von einem Roman namens \"Der Fremde\", der sich mit dem Protagonisten Meursault beschäftigt, dessen Verhältnis zu seiner Mutter und anderen Ereignissen im Leben beschrieben wird. Es gibt also keinen direkten Unterschied zwischen Hund und Katze in den angegebenen Texten.",
+        "model": "mistral:7b-instruct-v0.3-q5_0",
+        "tokens": {
+          "input": 931,
+          "output": 165,
+          "total": 1096
+        },
+        "timing": {
+          "total_duration_ms": 96324.785823,
+          "eval_duration_ms": 22890.181262
+        }
+      },
+      "timestamp": "2025-07-10T23:22:34.770782"
+    }
+  ]
+}
