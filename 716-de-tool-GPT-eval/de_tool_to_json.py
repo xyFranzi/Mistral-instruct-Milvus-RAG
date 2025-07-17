@@ -701,9 +701,9 @@ class EnhancedRAGToolIntegrationTester:
 if __name__ == "__main__":
     # 可以测试不同的模型
     models_to_test = [
-        "mistral:7b-instruct-v0.3-q5_0",
-        "mistral-small:24b",
-        # "qwen3:8b",
+        # "mistral:7b-instruct-v0.3-q5_0",
+        # "mistral-small:24b",
+        "qwen3:8b",
     ]
     
     for model in models_to_test:
