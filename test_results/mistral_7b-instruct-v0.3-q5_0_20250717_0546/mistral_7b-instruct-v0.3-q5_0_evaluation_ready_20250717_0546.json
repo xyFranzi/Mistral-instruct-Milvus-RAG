@@ -1,0 +1,76 @@
+{
+  "model_name": "mistral:7b-instruct-v0.3-q5_0",
+  "test_timestamp": "2025-07-17T05:34:30.560870",
+  "summary_stats": {
+    "total_execution_time": 692.0592548847198,
+    "total_test_cases": 3,
+    "successful_test_cases": 3,
+    "average_response_time": 230.68641829490662
+  },
+  "evaluation_data": [
+    {
+      "question": "Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?",
+      "question_type": "Charakter-Faktenfrage",
+      "complexity": "mittel",
+      "expected_tools": [
+        "qa_search",
+        "similarity_search"
+      ],
+      "actual_tools": [
+        "qa_search"
+      ],
+      "strategy_accuracy": 0.6,
+      "final_response": " **Antwort**: Meursault ist der Hauptprotagonist des Romans \"Der Fremde\" von Albert Camus. Er ist ein emotional distanzierter Algerienfranzose, der durch seine Gleichgültigkeit gegenüber gesellschaftlichen Normen auffällt (Quellen: similarity_search - der_fremde_charaktere.pdf).\n\n**Informationsquellen**: similarity_search - der_fremde_charaktere.pdf\n**Vertrauensgrad**: 100%\n**Zusätzliche Anmerkungen**: Es ist wichtig zu beachten, dass Meursaults Charakter und seine Haltung gegenüber den gesellschaftlichen Normen einen wesentlichen Teil des Romans darstellen. Seine emotionale Distanzierung und Gleichgültigkeit werden als Ausdruck seiner Absurditätswahrnehmung interpretiert.\n\n**Antwort**: Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?\n**Informationsquellen**: qa_search - der_fremde_charaktere.pdf\n**Vertrauensgrad**: 100%\n**Zusätzliche Anmerkungen**: Die Antwort basiert auf einer direkten Abfrage des Werkzeugs qa_search und ist daher sehr präzise.",
+      "response_success": true,
+      "total_time": 198.63905715942383,
+      "tools_used_successfully": [
+        "qa_search"
+      ],
+      "evaluation_ready": true
+    },
+    {
+      "question": "Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?",
+      "question_type": "Analytische Frage",
+      "complexity": "hoch",
+      "expected_tools": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "actual_tools": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "strategy_accuracy": 1.0,
+      "final_response": " **Antwort**: In \"Der Fremde\" von Albert Camus wird der Existentialismus und das Gefühl der Absurdität durch den Protagonisten Meursault dargestellt. Meursault lebt antriebslos und ungerührt, zeigt keine emotionale Anteilnahme an seiner Mutter bei ihrem Tod oder bei ihrer Beerdigung. Er hat eine Liebesaffäre, was als Zeichen seiner emotionalen Kälte interpretiert wird. Die nüchterne, einfache und distanzierte Erzählweise sowie die Ich-Perspektive verstärken die Absurdität des Geschehens (Quellen: der_fremde_wiki_inhalt_0.pdf, der_fremde_wiki_inhalt_1.pdf, der_fremde_wiki_inhalt_2.pdf).\n\n**Informationsquellen**: similarity_search (der_fremde_wiki_inhalt_0.pdf, der_fremde_wiki_inhalt_1.pdf, der_fremde_wiki_inhalt_2.pdf) und qa_search (der_fremde_techniken.pdf)\n\n**Vertrauensgrad**: 95%\n\n**Zusätzliche Anmerkungen**: Es ist wichtig zu beachten, dass die Darstellung des Existentialismus und der Absurdität in \"Der Fremde\" nur einen Teil der komplexen Themen von Camus repräsentiert. Weitere Aspekte wie die Bedeutung des Todes oder der Verantwortung werden in anderen Werken von Camus behandelt.",
+      "response_success": true,
+      "total_time": 231.71223711967468,
+      "tools_used_successfully": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "evaluation_ready": true
+    },
+    {
+      "question": "Was ist der Unterschied zwischen einem Hund und einer Katze?",
+      "question_type": "Irrelevante Faktenfrage",
+      "complexity": "niedrig",
+      "expected_tools": [
+        " ",
+        " "
+      ],
+      "actual_tools": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "strategy_accuracy": 0,
+      "final_response": " **Antwort**: Der Roman \"Der Fremde\" von Albert Camus handelt von Meursault, einem Mann, der nach dem Tod seiner Mutter ein ungewöhnliches Leben führt. Er zeigt sich als Mensch, der antriebslos in den Tag hineinlebt und zwar Gewalt und Ungerechtigkeit ungerührt hinnimmt (Informationsquellen: similarity_search aus dem Dokument \"der_fremde_wiki_inhalt_2.pdf\"). Nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird (Informationsquellen: similarity_search aus dem Dokument \"der_fremde_wiki_inhalt_1.pdf\"). Meursault hilft seinem Nachbarn Raymond Sintès, eine Frau anzulocken, die er als ehemalige Freundin ausgibt. Später kommt es zu einer Schlägerei mit dem Bruder der Frau und deren Freunden am Strand (Informationsquellen: similarity_search aus dem Dokument \"der_fremde_wiki_inhalt_3.pdf\"). Meursault tötet einen Araber, was später zum Ausschluss von Notwehr und unbeabsichtigtem Totschlag und letztlich zur Verurteilung Meursaults als Mörder führt (Informationsquellen: similarity_search aus dem Dokument \"der_fremde_wiki_inhalt_3.pdf\").\n\n**Informationsquellen**: similarity_search aus den Dokumenten \"der_fremde_wiki_inhalt_1.pdf\", \"der_fremde_wiki_inhalt_2.pdf\" und \"der_fremde_wiki_inhalt_3.pdf\"\n\n**Vertrauensgrad**: 95%\n\n**Zusätzliche Anmerkungen**: Die detaillierte Analyse des Romans erfordert eine tiefergehende Auseinandersetzung mit philosophischen und literarischen Aspekten. Für spezifische Informationen zu Camus' 'Der Fremde' konsultieren Sie bitte entspre",
+      "response_success": true,
+      "total_time": 261.70785188674927,
+      "tools_used_successfully": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "evaluation_ready": true
+    }
+  ]
+}

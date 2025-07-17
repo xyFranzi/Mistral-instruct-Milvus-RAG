@@ -624,7 +624,7 @@ class EnhancedRAGToolIntegrationTester:
         print("="*80)
     
     def _save_test_results(self):
-        """Save test results to JSON file in test_results folder"""
+        """Save test results to JSON file in test_results folder with model-specific subfolders"""
         try:
             # Create test_results directory if it doesn't exist
             current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -634,12 +634,20 @@ class EnhancedRAGToolIntegrationTester:
             if not os.path.exists(test_results_dir):
                 os.makedirs(test_results_dir)
             
-            # Generate filename with timestamp
+            # Generate timestamp and clean model name
             timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-            # Clean model name for filename
             clean_model_name = self.model_name.replace(":", "_").replace("/", "_")
+            
+            # Create model-specific folder with timestamp
+            model_folder_name = f"{clean_model_name}_{timestamp}"
+            model_results_dir = os.path.join(test_results_dir, model_folder_name)
+            
+            if not os.path.exists(model_results_dir):
+                os.makedirs(model_results_dir)
+            
+            # Generate filenames
             filename = f"{clean_model_name}_test_results_{timestamp}.json"
-            filepath = os.path.join(test_results_dir, filename)
+            filepath = os.path.join(model_results_dir, filename)
             
             # Save to JSON file
             with open(filepath, 'w', encoding='utf-8') as f:
@@ -671,14 +679,15 @@ class EnhancedRAGToolIntegrationTester:
                 }
                 summary["evaluation_data"].append(eval_data)
             
-            # Save evaluation-ready summary
+            # Save evaluation-ready summary in the same model folder
             eval_filename = f"{clean_model_name}_evaluation_ready_{timestamp}.json"
-            eval_filepath = os.path.join(test_results_dir, eval_filename)
+            eval_filepath = os.path.join(model_results_dir, eval_filename)
             
             with open(eval_filepath, 'w', encoding='utf-8') as f:
                 json.dump(summary, f, ensure_ascii=False, indent=2)
             
             print(f"📊 Evaluation-ready summary saved to: {eval_filepath}")
+            print(f"📂 Model results folder: {model_results_dir}")
             
         except Exception as e:
             print(f"❌ Error saving test results: {e}")
@@ -693,7 +702,7 @@ if __name__ == "__main__":
     # 可以测试不同的模型
     models_to_test = [
         "mistral:7b-instruct-v0.3-q5_0",
-        # "mistral-small:24b",
+        "mistral-small:24b",
         # "qwen3:8b",
     ]
     

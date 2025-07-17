@@ -1,0 +1,76 @@
+{
+  "model_name": "mistral-small:24b",
+  "test_timestamp": "2025-07-17T05:46:09.355035",
+  "summary_stats": {
+    "total_execution_time": 1138.0771396160126,
+    "total_test_cases": 3,
+    "successful_test_cases": 3,
+    "average_response_time": 379.35904653867084
+  },
+  "evaluation_data": [
+    {
+      "question": "Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?",
+      "question_type": "Charakter-Faktenfrage",
+      "complexity": "mittel",
+      "expected_tools": [
+        "qa_search",
+        "similarity_search"
+      ],
+      "actual_tools": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "strategy_accuracy": 1.0,
+      "final_response": "**Antwort**:\nMeursault ist der Protagonist von Albert Camus' Roman \"Der Fremde\". Er wird als ein introvertierter und emotional distanzierter Mann beschrieben, der durch seine Gleichgültigkeit gegenüber gesellschaftlichen Normen auffällt. Der Roman beginnt mit dem Tod seiner Mutter, bei dessen Beerdigung Meursault keine Emotionen zeigt. Diese fehlende Anteilnahme wird als Ausdruck eines kühlen Verhältnisses zwischen Mutter und Sohn interpretiert.\n\nMeursault lebt antriebslos in den Tag hinein und nimmt Gewalt und Ungerechtigkeit ungerührt hin. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Er scheint zufrieden zu sein, wenn sein Alltag routinemäßig und wie gewohnt verläuft.\n\nDer Roman ist in zwei Teile gegliedert: Der erste Teil dokumentiert die Tage nach dem Tod seiner Mutter aus der Ich-Perspektive von Meursault. Der zweite Teil behandelt seine Verhaftung und Hinrichtung wegen Totschlags. Camus verwendet eine nüchterne, einfache und distanzierte Erzählweise, die durch die Ich-Perspektive und den knappen, emotionslosen Stil verstärkt wird.\n\n**Informationsquellen**:\n- similarity_search: \"der_fremde_wiki_inhalt_0.pdf\", \"der_fremde_wiki_inhalt_1.pdf\", \"der_fremde_wiki_inhalt_2.pdf\"\n- qa_search: \"der_fremde_charaktere.pdf\", \"der_fremde_techniken.pdf\"\n\n**Vertrauensgrad**: 95%\n\n**Zusätzliche Anmerkungen**:\nDie Informationen basieren auf den Suchergebnissen der Werkzeuge similarity_search und qa_search, die relevante Dokumente und präzise Antworten lieferten. Die Antwort integriert alle relevanten Informationen aus diesen Quellen und hebt wichtige Aspekte von Meursaults Charakter und seiner Rolle im Roman hervor.",
+      "response_success": true,
+      "total_time": 519.5946419239044,
+      "tools_used_successfully": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "evaluation_ready": true
+    },
+    {
+      "question": "Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?",
+      "question_type": "Analytische Frage",
+      "complexity": "hoch",
+      "expected_tools": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "actual_tools": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "strategy_accuracy": 1.0,
+      "final_response": "**Antwort**:\n\nAlbert Camus zeigt in seinem Roman \"Der Fremde\" (L'Étranger) zentrale Themen des Existentialismus und das Gefühl der Absurdität durch verschiedene literarische Techniken und die Charakterisierung von Meursault.\n\nMeursault, der Protagonist des Romans, lebt ein antriebsloses Leben, das von Routine und emotionaler Distanz geprägt ist. Er nimmt Details seiner Umgebung wahr, zeigt jedoch keine Reaktion auf Gewalt oder Ungerechtigkeit (der_fremde_wiki_inhalt_2.pdf). Diese emotionale Kälte wird besonders deutlich, als er kurz nach der Beerdigung seiner Mutter eine Liebesaffäre beginnt und dabei keine Trauer zeigt. Meursaults Zufriedenheit mit einem routinemäßigen Alltag unterstreicht seine Gleichgültigkeit gegenüber den großen Fragen des Lebens.\n\nCamus verwendet eine nüchterne, einfache und distanzierte Erzählweise, um die Absurdität des Geschehens zu verstärken (der_fremde_techniken.pdf). Die Ich-Perspektive und der knappe, emotionslose Stil tragen dazu bei, dass der Leser die Welt durch Meursaults Augen sieht – eine Welt, in der traditionelle moralische und emotionale Werte keine Rolle spielen. Diese Erzählweise betont die Sinnlosigkeit und Absurdität des Lebens, ein zentrales Thema des Existentialismus.\n\nDer Roman beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ (der_fremde_wiki_inhalt_1.pdf). Diese Eröffnung zeigt Meursaults Desinteresse an der Zeit und seinen Mangel an emotionaler Reaktion auf den Tod seiner Mutter. Diese fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis zwischen Mutter und Sohn und verstärkt das Gefühl der Absurdität.\n\n**Informationsquellen**:\n- similarity_search: \"der_fremde_wiki_inhalt_2.pdf\", \"der_fremde_wiki_inhalt_0.pdf\", \"der_fremde_wiki_inhalt_1.pdf\"\n- qa_search: \"der_fremde_techniken.pdf\"\n\n**Vertrauensgrad**: 95%\n\n**Zusätzliche Anmerkungen**:\nDie Antwort basiert auf den bereitgestellten Dokumenten und Werkzeugen. Weitere spezifische Details zur Charakterisierung von Meursault oder zusätzlichen literarischen Techniken könnten durch eine tiefere Analyse des Romans gewonnen werden.",
+      "response_success": true,
+      "total_time": 412.73139214515686,
+      "tools_used_successfully": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "evaluation_ready": true
+    },
+    {
+      "question": "Was ist der Unterschied zwischen einem Hund und einer Katze?",
+      "question_type": "Irrelevante Faktenfrage",
+      "complexity": "niedrig",
+      "expected_tools": [
+        " ",
+        " "
+      ],
+      "actual_tools": [
+        "qa_search"
+      ],
+      "strategy_accuracy": 0,
+      "final_response": "**Antwort**:\nDie ursprüngliche Frage \"Was ist der Unterschied zwischen einem Hund und einer Katze?\" scheint nicht direkt mit Albert Camus' Werk \"Der Fremde\" verbunden zu sein. Die Suchergebnisse deuten darauf hin, dass die Informationen, die Sie suchen, möglicherweise nicht in den verfügbaren Dokumenten enthalten sind.\n\n**Informationsquellen**:\n- qa_search: allgemeine_referenz_der_fremde.pdf\n\n**Vertrauensgrad**: 30%\n\n**Zusätzliche Anmerkungen**:\nDie Suchergebnisse zeigen, dass die spezifische Frage nach dem Unterschied zwischen einem Hund und einer Katze nicht direkt beantwortet werden kann. Es wird empfohlen, für spezifische Informationen zu Camus' \"Der Fremde\" entsprechende Literatur zu konsultieren. Das Werk behandelt zentrale Themen des Existentialismus und der Absurdität, was eine detaillierte Analyse erfordert.",
+      "response_success": true,
+      "total_time": 205.7510085105896,
+      "tools_used_successfully": [
+        "qa_search"
+      ],
+      "evaluation_ready": true
+    }
+  ]
+}
