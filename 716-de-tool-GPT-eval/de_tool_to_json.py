@@ -703,7 +703,10 @@ if __name__ == "__main__":
     models_to_test = [
         # "mistral:7b-instruct-v0.3-q5_0",
         # "mistral-small:24b",
-        "qwen3:8b",
+        # "qwen3:8b",
+        # "llama3.1:latest",
+        "gemma3:4b",
+
     ]
     
     for model in models_to_test:

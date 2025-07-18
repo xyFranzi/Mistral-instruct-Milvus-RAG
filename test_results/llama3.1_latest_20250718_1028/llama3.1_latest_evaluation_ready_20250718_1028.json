@@ -1,0 +1,76 @@
+{
+  "model_name": "llama3.1:latest",
+  "test_timestamp": "2025-07-18T10:19:50.805507",
+  "summary_stats": {
+    "total_execution_time": 504.258501291275,
+    "total_test_cases": 3,
+    "successful_test_cases": 3,
+    "average_response_time": 168.08616709709167
+  },
+  "evaluation_data": [
+    {
+      "question": "Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?",
+      "question_type": "Charakter-Faktenfrage",
+      "complexity": "mittel",
+      "expected_tools": [
+        "qa_search",
+        "similarity_search"
+      ],
+      "actual_tools": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "strategy_accuracy": 1.0,
+      "final_response": "**Antwort:** Meursault ist der Protagonist von Albert Camus' Roman \"Der Fremde\". Er ist ein introvertierter Mann, der in Algerien lebt und im Jahr 1930 einen Totschlag begangen hat. Die Handlung des Romans spielt während seiner Gefangenschaft und wartet auf die Hinrichtung. Meursault zeigt sich als emotional distanzierter Mensch, der Gewalt und Ungerechtigkeit ungerührt hinnimmt. Er ist zufrieden mit seinem Alltag, solange er routinemäßig und wie gewohnt verläuft.\n\nMeursaults Rolle in \"Der Fremde\" besteht darin, die Absurdität des menschlichen Lebens zu thematisieren. Durch seine Gleichgültigkeit gegenüber gesellschaftlichen Normen und seiner emotionale Distanzierung wirft Camus Fragen nach dem Sinn des Lebens auf. Meursaults Handlungen und Gedanken spiegeln die Unfähigkeit der Menschen wider, sich mit der Absurdität ihres eigenen Daseins auseinanderzusetzen.\n\n**Informationsquellen:** Die Antwort basiert auf den Ergebnissen von **similarity_search** (Dokumente: \"der_fremde_wiki_inhalt_0.pdf\", \"der_fremde_wiki_inhalt_1.pdf\" und \"der_fremde_wiki_inhalt_2.pdf\") und **qa_search** (QA-Paare aus \"der_fremde_charaktere.pdf\").\n\n**Vertrauensgrad:** 90%\n\n**Zusätzliche Anmerkungen:** Die Antwort ist auf der Grundlage der bereitgestellten Informationen erstellt. Es ist wichtig zu beachten, dass die Interpretation von Meursaults Rolle und Charakter in \"Der Fremde\" je nach Leserperspektive variieren kann.",
+      "response_success": true,
+      "total_time": 191.41713762283325,
+      "tools_used_successfully": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "evaluation_ready": true
+    },
+    {
+      "question": "Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?",
+      "question_type": "Analytische Frage",
+      "complexity": "hoch",
+      "expected_tools": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "actual_tools": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "strategy_accuracy": 1.0,
+      "final_response": "**Antwort:** \nCamus zeigt den Existentialismus und das Gefühl der Absurdität in \"Der Fremde\" durch die Figur des Meursault, der als Mensch dargestellt wird, der antriebslos in den Tag hineinlebt. Er nimmt zwar Details seiner Umgebung wahr, aber Gewalt und Ungerechtigkeit ungerührt hin. Die Beerdigung seiner Mutter ist ein wichtiger Punkt im Roman, da Meursault keine Emotionen zeigt, was auf ein kühles Verhältnis zwischen Mutter und Sohn hindeutet. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort.\n\nCamus verwendet eine nüchterne, einfache und distanzierte Erzählweise, die die Absurdität des Geschehens verstärkt. Die Ich-Perspektive und der knappe, emotionslose Stil tragen dazu bei, dass das Gefühl der Absurdität im Leser geweckt wird.\n\n**Informationsquellen:** \n- similarity_search: Dokumentfragmente aus \"der_fremde_wiki_inhalt_2.pdf\", \"der_fremde_wiki_inhalt_0.pdf\" und \"der_fremde_wiki_inhalt_1.pdf\"\n- qa_search: Antwortpaar aus \"der_fremde_techniken.pdf\"\n\n**Vertrauensgrad:** 80%\nDie Antwort basiert auf den Suchergebnissen der Werkzeuge, aber es fehlen einige spezifische Details zu Camus' Darstellung des Existentialismus und der Absurdität. Daher ist ein Vertrauensgrad von 80% angemessen.\n\n**Zusätzliche Anmerkungen:** \nEs wäre wünschenswert, weitere Dokumente oder Quellen zu finden, die spezifische Informationen über Camus' literarische Techniken und seine Darstellung des Existentialismus in \"Der Fremde\" liefern.",
+      "response_success": true,
+      "total_time": 178.25491046905518,
+      "tools_used_successfully": [
+        "similarity_search",
+        "qa_search"
+      ],
+      "evaluation_ready": true
+    },
+    {
+      "question": "Was ist der Unterschied zwischen einem Hund und einer Katze?",
+      "question_type": "Irrelevante Faktenfrage",
+      "complexity": "niedrig",
+      "expected_tools": [
+        " ",
+        " "
+      ],
+      "actual_tools": [
+        "qa_search"
+      ],
+      "strategy_accuracy": 0,
+      "final_response": "**Antwort:** \n\"Der Unterschied zwischen einem Hund und einer Katze ist ein grundlegender Aspekt der Tierbiologie. Hunde (Canis lupus familiaris) und Katzen (Felis catus) gehören verschiedenen Familien an und haben sich im Laufe der Evolution unterschiedliche Anpassungen erworben, die ihre Lebensweise und Verhaltensweisen prägen. Hunde sind hauptsächlich soziale Tiere, die in Packen leben und eine starke Bindung zu ihren Artgenossen aufbauen können. Katzen sind dagegen eher Einzelgänger, obwohl sie auch soziale Aspekte ihrer Verhaltensweise zeigen können.\n\nIn Bezug auf Camus' 'Der Fremde' ist der Unterschied zwischen einem Hund und einer Katze nicht direkt relevant. Das Werk konzentriert sich auf philosophische und literarische Themen wie den Existentialismus und die Absurdität, anstatt sich mit Tierbiologie zu beschäftigen.\n\n**Informationsquellen:**\n- **qa_search**: Für allgemeine Informationen über Hunde und Katzen.\n- **allgemeine_referenz_der_fremde.pdf**: Als Referenz für das Werk von Camus.\n\n**Vertrauensgrad:** 60% (Da die Frage nicht direkt mit dem Thema 'Der Fremde' zusammenhängt, ist der Vertrauensgrad etwas niedriger.)\n\n**Zusätzliche Anmerkungen:**\nFür spezifische Fragen zu Tierbiologie oder für eine detailliertere Analyse des Themas 'Der Fremde', empfehle ich die Nutzung von **similarity_search**, um relevante Dokumentfragmente und analytische Inhalte abzurufen.",
+      "response_success": true,
+      "total_time": 134.5863585472107,
+      "tools_used_successfully": [
+        "qa_search"
+      ],
+      "evaluation_ready": true
+    }
+  ]
+}

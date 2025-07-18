@@ -1,0 +1,286 @@
+{
+  "model_name": "gemma3:4b",
+  "test_timestamp": "2025-07-18T10:39:15.831582",
+  "test_config": {
+    "temperature": 0.1,
+    "num_predict": 512,
+    "tools_used": [
+      "similarity_search",
+      "qa_search"
+    ]
+  },
+  "test_cases": [
+    {
+      "test_case_id": 1,
+      "question": "Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?",
+      "question_type": "Charakter-Faktenfrage",
+      "complexity": "mittel",
+      "expected_strategy": {
+        "primary_tool": "qa_search",
+        "secondary_tool": "similarity_search"
+      },
+      "reasoning": "Kombiniert Faktenfrage mit Charakteranalyse",
+      "execution_log": [],
+      "strategy_analysis": {
+        "strategy_prompt": "Sie sind ein intelligenter Assistent, der sich auf Albert Camus' \"Der Fremde\" spezialisiert hat. Ihnen stehen zwei leistungsstarke Werkzeuge zur Verfügung:\n\n\n                1. **similarity_search**: Semantische Ähnlichkeitssuche\n                - Verwendung für: konzeptuelle Fragen, literarische Analysen, Themenuntersuchungen, Charakterstudien\n                - Liefert: relevante Dokumentfragmente und Analyseinhalte\n\n                2. **qa_search**: Frage-Antwort-Suche  \n                - Verwendung für: spezifische Faktenfragen, direkte Informationsabfragen\n                - Liefert: präzise Antworten und hochwertige Informationen\n\n                **Wichtige Strategien**:\n                - Bei komplexen Fragen empfiehlt sich die gleichzeitige Nutzung beider Werkzeuge für umfassende Informationen\n                - Bei einfachen Faktenfragen sollten Sie qa_search bevorzugt verwenden\n                - Bei analytischen Fragen sollten Sie similarity_search priorisieren\n                - Stützen Sie Ihre Antworten stets auf die von den Werkzeugen gelieferten Ergebnisse\n\n                        Folgende Frage soll beantwortet werden: \"Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?\"\n\n                        Analysieren Sie zunächst diese Frage und entwickeln Sie eine Werkzeugstrategie:\n                        1. Bestimmen Sie die Art und Komplexität der Frage\n                        2. Wählen Sie die zu verwendenden Werkzeuge aus\n                        3. Erläutern Sie die Priorität und Gewichtung der Werkzeugnutzung\n\n                        Antwortformat:\n                        **Frageanalyse**: [Art und Komplexität der Frage]\n                        **Werkzeugstrategie**: [Liste der zu verwendenden Werkzeuge]\n                        **Verwendungsreihenfolge**: [Welches Werkzeug zuerst und warum]\n                        **Erwartetes Ergebnis**: [Welche Informationen Sie zu erhalten hoffen]",
+        "strategy_response": "Okay, hier ist meine Analyse und Strategie zur Beantwortung der Frage \"Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?\"\n\n**Frageanalyse**: [Komplexe analytische Frage. Die Frage erfordert nicht nur die Identifizierung von Meursaults Identität, sondern auch eine Bewertung seiner Rolle und seines Verhaltens innerhalb der Erzählung. Es geht um eine Charakterstudie mit einem Fokus auf die philosophischen Implikationen seiner Handlungen.]\n\n**Werkzeugstrategie**: [Verwendung von *similarity_search* und *qa_search*. *similarity_search* wird verwendet, um die verschiedenen Aspekte von Meursaults Charakter und seiner Rolle in der Geschichte zu erkunden, während *qa_search* verwendet wird, um spezifische Informationen über seine Hintergrundgeschichte, seine Beziehungen und seine Handlungen zu finden.]\n\n**Verwendungsreihenfolge**: [1. *qa_search*: Zuerst wird *qa_search* verwendet, um grundlegende Fakten über Meursaults Leben, seine Beziehung zu seiner Mutter und die wichtigsten Ereignisse seiner Geschichte zu ermitteln. Dies liefert eine solide Basis. 2. *similarity_search*: Sobald die grundlegenden Fakten bekannt sind, wird *similarity_search* verwendet, um die thematischen und philosophischen Aspekte von Meursaults Verhalten zu untersuchen, seine Rebellion gegen gesellschaftliche Erwartungen und die Bedeutung seiner Aktionen im Kontext der Erzählung zu analysieren.]\n\n**Erwartetes Ergebnis**: [Ich erwarte, dass *qa_search* mir Informationen liefert über Meursaults Hintergrund (seine Beziehung zu seiner Mutter, sein Leben in Arlier), seine Begegnung mit Salamano und seine Teilnahme an der Beerdigung. *similarity_search* wird mir helfen, die zentrale Rolle von Meursault als Symbol für die Sinnlosigkeit des Lebens, die Rebellion gegen Konventionen und die Suche nach persönlicher Bedeutung zu verstehen. Ich erwarte eine detaillierte Analyse seiner Aktionen und Reaktionen, die die philosophischen Themen des Romans hervorhebt.]\n",
+        "execution_time": 93.26088356971741,
+        "success": true,
+        "planned_tools": [
+          "similarity_search",
+          "qa_search"
+        ],
+        "strategy_accuracy": 1.0
+      },
+      "tool_results": {
+        "similarity_search": {
+          "result": {
+            "tool": "similarity_search",
+            "query": "Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?",
+            "found_documents": 3,
+            "documents": [
+              {
+                "score": 379.468994140625,
+                "source": "der_fremde_wiki_inhalt_0.pdf",
+                "content": "Der Roman erzählt die Geschichte eines introvertierten Mannes namens Meursault. Er hat einen Totschlag begangen und wartet in seiner Gefängniszelle auf die Hinrichtung. Die Handlung spielt im Algerien der 1930er Jahre. Der Name Meursault ist möglicherweise von „Meurs, sot!“, zu Deutsch etwa „Stirb, (du) Trottel!“, abgeleitet."
+              },
+              {
+                "score": 329.11651611328125,
+                "source": "der_fremde_wiki_inhalt_1.pdf",
+                "content": "Der Roman ist in zwei Teile gegliedert. Der erste Teil beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ Bei der Beerdigung seiner Mutter zeigt Meursault keine Emotionen. Die fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis, das zwischen Mutter und Sohn herrschte. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort."
+              },
+              {
+                "score": 325.1319885253906,
+                "source": "der_fremde_wiki_inhalt_2.pdf",
+                "content": "Meursault zeigt sich als Mensch, der antriebslos in den Tag hineinlebt, der zwar Details seiner Umgebung wahrnimmt, jedoch Gewalt und Ungerechtigkeit ungerührt hinnimmt. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Meursault ist offenbar zufrieden, wenn sein Alltag routinemäßig und wie gewohnt verläuft."
+              }
+            ],
+            "search_type": "semantic_similarity"
+          },
+          "execution_time": 0.21953392028808594,
+          "success": true
+        },
+        "qa_search": {
+          "result": {
+            "tool": "qa_search",
+            "query": "Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?",
+            "found_answers": 2,
+            "qa_pairs": [
+              {
+                "question": "Wer ist der Protagonist von 'Der Fremde'?",
+                "answer": "'Der Fremde' hat einen Hauptprotagonisten: Meursault, ein emotional distanzierter Algerienfranzose, der durch seine Gleichgültigkeit gegenüber gesellschaftlichen Normen auffällt.",
+                "source": "der_fremde_charaktere.pdf",
+                "confidence": 0.95,
+                "category": "Charaktere",
+                "match_score": 0.5857142857142856
+              },
+              {
+                "question": "Welche literarischen Techniken verwendet Camus in 'Der Fremde'?",
+                "answer": "Camus verwendet eine nüchterne, einfache und distanzierte Erzählweise. Die Ich-Perspektive und der knappe, emotionslose Stil verstärken die Absurdität des Geschehens.",
+                "source": "der_fremde_techniken.pdf",
+                "confidence": 0.88,
+                "category": "Technik",
+                "match_score": 0.26666666666666666
+              }
+            ],
+            "search_type": "question_answering"
+          },
+          "execution_time": 0.000568389892578125,
+          "success": true
+        }
+      },
+      "final_response": {
+        "fusion_prompt": "Sie sind ein intelligenter Assistent, der sich auf Albert Camus' \"Der Fremde\" spezialisiert hat. Ihnen stehen zwei leistungsstarke Werkzeuge zur Verfügung:\n\n\n                1. **similarity_search**: Semantische Ähnlichkeitssuche\n                - Verwendung für: konzeptuelle Fragen, literarische Analysen, Themenuntersuchungen, Charakterstudien\n                - Liefert: relevante Dokumentfragmente und Analyseinhalte\n\n                2. **qa_search**: Frage-Antwort-Suche  \n                - Verwendung für: spezifische Faktenfragen, direkte Informationsabfragen\n                - Liefert: präzise Antworten und hochwertige Informationen\n\n                **Wichtige Strategien**:\n                - Bei komplexen Fragen empfiehlt sich die gleichzeitige Nutzung beider Werkzeuge für umfassende Informationen\n                - Bei einfachen Faktenfragen sollten Sie qa_search bevorzugt verwenden\n                - Bei analytischen Fragen sollten Sie similarity_search priorisieren\n                - Stützen Sie Ihre Antworten stets auf die von den Werkzeugen gelieferten Ergebnisse\n\n                            Ursprüngliche Frage: \"Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?\"\n\n                            Suchergebnisse der Werkzeuge:\n                            \nSIMILARITY_SEARCH Ergebnisse:\n{\n  \"tool\": \"similarity_search\",\n  \"query\": \"Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?\",\n  \"found_documents\": 3,\n  \"documents\": [\n    {\n      \"score\": 379.468994140625,\n      \"source\": \"der_fremde_wiki_inhalt_0.pdf\",\n      \"content\": \"Der Roman erzählt die Geschichte eines introvertierten Mannes namens Meursault. Er hat einen Totschlag begangen und wartet in seiner Gefängniszelle auf die Hinrichtung. Die Handlung spielt im Algerien der 1930er Jahre. Der Name Meursault ist möglicherweise von „Meurs, sot!“, zu Deutsch etwa „Stirb, (du) Trottel!“, abgeleitet.\"\n    },\n    {\n      \"score\": 329.11651611328125,\n      \"source\": \"der_fremde_wiki_inhalt_1.pdf\",\n      \"content\": \"Der Roman ist in zwei Teile gegliedert. Der erste Teil beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ Bei der Beerdigung seiner Mutter zeigt Meursault keine Emotionen. Die fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis, das zwischen Mutter und Sohn herrschte. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort.\"\n    },\n    {\n      \"score\": 325.1319885253906,\n      \"source\": \"der_fremde_wiki_inhalt_2.pdf\",\n      \"content\": \"Meursault zeigt sich als Mensch, der antriebslos in den Tag hineinlebt, der zwar Details seiner Umgebung wahrnimmt, jedoch Gewalt und Ungerechtigkeit ungerührt hinnimmt. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Meursault ist offenbar zufrieden, wenn sein Alltag routinemäßig und wie gewohnt verläuft.\"\n    }\n  ],\n  \"search_type\": \"semantic_similarity\"\n}\n\nQA_SEARCH Ergebnisse:\n{\n  \"tool\": \"qa_search\",\n  \"query\": \"Wer ist Meursault und welche Rolle spielt er in 'Der Fremde'?\",\n  \"found_answers\": 2,\n  \"qa_pairs\": [\n    {\n      \"question\": \"Wer ist der Protagonist von 'Der Fremde'?\",\n      \"answer\": \"'Der Fremde' hat einen Hauptprotagonisten: Meursault, ein emotional distanzierter Algerienfranzose, der durch seine Gleichgültigkeit gegenüber gesellschaftlichen Normen auffällt.\",\n      \"source\": \"der_fremde_charaktere.pdf\",\n      \"confidence\": 0.95,\n      \"category\": \"Charaktere\",\n      \"match_score\": 0.5857142857142856\n    },\n    {\n      \"question\": \"Welche literarischen Techniken verwendet Camus in 'Der Fremde'?\",\n      \"answer\": \"Camus verwendet eine nüchterne, einfache und distanzierte Erzählweise. Die Ich-Perspektive und der knappe, emotionslose Stil verstärken die Absurdität des Geschehens.\",\n      \"source\": \"der_fremde_techniken.pdf\",\n      \"confidence\": 0.88,\n      \"category\": \"Technik\",\n      \"match_score\": 0.26666666666666666\n    }\n  ],\n  \"search_type\": \"question_answering\"\n}\n\n                            Basierend auf den obigen Suchergebnissen geben Sie bitte eine umfassende und präzise Antwort. Anforderungen:\n\n                            1. Integrieren Sie alle relevanten Informationen\n                            2. Heben Sie wichtige Inhalte hervor\n                            3. Wahren Sie wissenschaftlichen Anspruch und Genauigkeit\n                            4. Falls Informationen unzureichend sind, weisen Sie darauf hin\n                            5. Geben Sie Quellenverweise an\n\n                            Antwortformat:\n                            **Antwort**: [Ihre vollständige Antwort]\n                            **Informationsquellen**: [Welche Werkzeuge und Dokumente wurden verwendet]\n                            **Vertrauensgrad**: [0-100%, Ihr Vertrauen in die Antwort]\n                            **Zusätzliche Anmerkungen**: [Falls weitere Erläuterungen nötig sind]",
+        "response_content": "**Antwort**: Meursault ist der Protagonist und Erzähler von Albert Camus’ Roman “Der Fremde”. Er wird als ein introvertierter und emotional distanzierter Algerienfranzose beschrieben, der durch seine Gleichgültigkeit gegenüber gesellschaftlichen Normen und seine unkonventionelle Lebensweise auffällt. Die Handlung des Romans beginnt mit der Nachricht vom Tod seiner Mutter, wobei Meursault kaum Emotionen zeigt, was bereits auf ein kühles und distanziertes Verhältnis zwischen Mutter und Sohn hindeutet.\n\n**Wichtige Inhalte**: Meursaults Charakter ist zentral für die Thematik des Romans. Er ist ein Mann, der sich scheinbar nicht an die Erwartungen der Gesellschaft anpasst und sich nicht von den üblichen Emotionen wie Trauer oder Schuldgefühlen leiten lässt. Seine emotionale Distanziertheit wird später als Hauptgrund für den Totschlag eines Arabers missbraucht, was die Absurdität der Situation noch verstärkt.  Die scheinbar zufällige und unbegründete Natur des Verbrechens unterstreicht die Themen Sinnlosigkeit und die Grenzen menschlicher Vernunft.\n\n**Informationsquellen**:\n*   similarity_search (semantic_similarity) – Dokumente: `der_fremde_wiki_inhalt_0.pdf`, `der_fremde_wiki_inhalt_1.pdf`, `der_fremde_wiki_inhalt_2.pdf`\n*   qa_search (question_answering) – Dokumente: `der_fremde_charaktere.pdf`, `der_fremde_techniken.pdf`\n\n**Vertrauensgrad**: 95%\n\n**Zusätzliche Anmerkungen**: Die Antworten der QA-Suche liefern eine präzise und direkte Beschreibung von Meursaults Charakter und seiner Rolle im Roman. Die similarity_search Ergebnisse liefern ergänzende Informationen, die die Charakterisierung weiter ausführen und den Kontext der Erzählung verdeutlichen.  Es ist wichtig zu beachten, dass Meursaults Verhalten und seine emotionale Distanziertheit Gegenstand der Interpretation und des Misstrauens der Justiz und der Gesellschaft sind, was die zentrale Thematik der Absurdität und des Urteils verstärkt.\n",
+        "execution_time": 119.01019763946533,
+        "success": true,
+        "model_name": "gemma3:4b"
+      },
+      "performance_metrics": {
+        "total_execution_time": 214.17439794540405,
+        "strategy_time": 93.26088356971741,
+        "tools_time": 0.22010231018066406,
+        "fusion_time": 119.01019763946533
+      },
+      "evaluation_ready": true
+    },
+    {
+      "test_case_id": 2,
+      "question": "Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?",
+      "question_type": "Analytische Frage",
+      "complexity": "hoch",
+      "expected_strategy": {
+        "primary_tool": "similarity_search",
+        "secondary_tool": "qa_search"
+      },
+      "reasoning": "Erfordert tiefgehende literarische Analyse und thematische Interpretation",
+      "execution_log": [],
+      "strategy_analysis": {
+        "strategy_prompt": "Sie sind ein intelligenter Assistent, der sich auf Albert Camus' \"Der Fremde\" spezialisiert hat. Ihnen stehen zwei leistungsstarke Werkzeuge zur Verfügung:\n\n\n                1. **similarity_search**: Semantische Ähnlichkeitssuche\n                - Verwendung für: konzeptuelle Fragen, literarische Analysen, Themenuntersuchungen, Charakterstudien\n                - Liefert: relevante Dokumentfragmente und Analyseinhalte\n\n                2. **qa_search**: Frage-Antwort-Suche  \n                - Verwendung für: spezifische Faktenfragen, direkte Informationsabfragen\n                - Liefert: präzise Antworten und hochwertige Informationen\n\n                **Wichtige Strategien**:\n                - Bei komplexen Fragen empfiehlt sich die gleichzeitige Nutzung beider Werkzeuge für umfassende Informationen\n                - Bei einfachen Faktenfragen sollten Sie qa_search bevorzugt verwenden\n                - Bei analytischen Fragen sollten Sie similarity_search priorisieren\n                - Stützen Sie Ihre Antworten stets auf die von den Werkzeugen gelieferten Ergebnisse\n\n                        Folgende Frage soll beantwortet werden: \"Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?\"\n\n                        Analysieren Sie zunächst diese Frage und entwickeln Sie eine Werkzeugstrategie:\n                        1. Bestimmen Sie die Art und Komplexität der Frage\n                        2. Wählen Sie die zu verwendenden Werkzeuge aus\n                        3. Erläutern Sie die Priorität und Gewichtung der Werkzeugnutzung\n\n                        Antwortformat:\n                        **Frageanalyse**: [Art und Komplexität der Frage]\n                        **Werkzeugstrategie**: [Liste der zu verwendenden Werkzeuge]\n                        **Verwendungsreihenfolge**: [Welches Werkzeug zuerst und warum]\n                        **Erwartetes Ergebnis**: [Welche Informationen Sie zu erhalten hoffen]",
+        "strategy_response": "Okay, hier ist meine Analyse und Strategie zur Beantwortung der Frage \"Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?\"\n\n**Frageanalyse**: [Komplexe analytische Frage. Die Frage erfordert nicht nur die Identifizierung von Schlüsselkonzepten (Existentialismus, Absurdität), sondern auch die Analyse, *wie* Camus diese in der Geschichte darstellt. Es geht um eine Interpretation und eine Verbindung von literarischen Elementen mit philosophischen Ideen.]\n\n**Werkzeugstrategie**: [Verwendung von *similarity_search* und *qa_search*.  *similarity_search* wird verwendet, um relevante Passagen zu finden, die Camus' Darstellung von Existenzialismus und Absurdität analysieren. *qa_search* wird verwendet, um spezifische Fragen zu den gefundenen Passagen zu beantworten und sicherzustellen, dass die Antworten auf Fakten basieren.]\n\n**Verwendungsreihenfolge**: [1. *similarity_search*: Zuerst wird *similarity_search* verwendet, um Passagen zu finden, die sich mit Camus' Darstellung von Existenzialismus und Absurdität befassen.  Dies wird priorisiert, da die Frage eine Interpretation erfordert und wir eine breite Palette von möglichen Hinweisen suchen müssen. 2. *qa_search*: Sobald *similarity_search* relevante Passagen identifiziert hat, wird *qa_search* verwendet, um die spezifischen Details und Argumente innerhalb dieser Passagen zu extrahieren und zu beantworten. Dies stellt sicher, dass die Antwort auf Fakten basiert und die Interpretation durch die Werkzeuge gestützt wird.]\n\n**Erwartetes Ergebnis**: [Ich erwarte, dass *similarity_search* Passagen liefert, die Themen wie Meidung, Sinnlosigkeit, die Beziehung des Arnaboldi zu seiner Familie, die Rolle der Stadt Algiers, die Bedeutung von Ritualen und die allgemeine Entfremdung des Protagonisten hervorheben.  *qa_search* sollte dann Antworten liefern, die diese Elemente mit Camus' philosophischen Ideen über Existenzialismus (Freiheit, Verantwortung, Sinnlosigkeit) und die Absurdität des Lebens verknüpfen.  Konkret erwarte ich, dass die Antwort die spezifischen literarischen Techniken identifiziert, die Camus einsetzt, um diese Konzepte zu vermitteln, z.B. die repetitive Natur der Ereignisse,",
+        "execution_time": 114.28478193283081,
+        "success": true,
+        "planned_tools": [
+          "similarity_search",
+          "qa_search"
+        ],
+        "strategy_accuracy": 1.0
+      },
+      "tool_results": {
+        "similarity_search": {
+          "result": {
+            "tool": "similarity_search",
+            "query": "Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?",
+            "found_documents": 3,
+            "documents": [
+              {
+                "score": 334.2140808105469,
+                "source": "der_fremde_wiki_inhalt_2.pdf",
+                "content": "Meursault zeigt sich als Mensch, der antriebslos in den Tag hineinlebt, der zwar Details seiner Umgebung wahrnimmt, jedoch Gewalt und Ungerechtigkeit ungerührt hinnimmt. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Meursault ist offenbar zufrieden, wenn sein Alltag routinemäßig und wie gewohnt verläuft."
+              },
+              {
+                "score": 309.52435302734375,
+                "source": "der_fremde_wiki_inhalt_0.pdf",
+                "content": "Der Roman erzählt die Geschichte eines introvertierten Mannes namens Meursault. Er hat einen Totschlag begangen und wartet in seiner Gefängniszelle auf die Hinrichtung. Die Handlung spielt im Algerien der 1930er Jahre. Der Name Meursault ist möglicherweise von „Meurs, sot!“, zu Deutsch etwa „Stirb, (du) Trottel!“, abgeleitet."
+              },
+              {
+                "score": 307.1035461425781,
+                "source": "der_fremde_wiki_inhalt_1.pdf",
+                "content": "Der Roman ist in zwei Teile gegliedert. Der erste Teil beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ Bei der Beerdigung seiner Mutter zeigt Meursault keine Emotionen. Die fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis, das zwischen Mutter und Sohn herrschte. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort."
+              }
+            ],
+            "search_type": "semantic_similarity"
+          },
+          "execution_time": 0.233597993850708,
+          "success": true
+        },
+        "qa_search": {
+          "result": {
+            "tool": "qa_search",
+            "query": "Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?",
+            "found_answers": 1,
+            "qa_pairs": [
+              {
+                "question": "Welche literarischen Techniken verwendet Camus in 'Der Fremde'?",
+                "answer": "Camus verwendet eine nüchterne, einfache und distanzierte Erzählweise. Die Ich-Perspektive und der knappe, emotionslose Stil verstärken die Absurdität des Geschehens.",
+                "source": "der_fremde_techniken.pdf",
+                "confidence": 0.88,
+                "category": "Technik",
+                "match_score": 0.23529411764705882
+              }
+            ],
+            "search_type": "question_answering"
+          },
+          "execution_time": 0.00010228157043457031,
+          "success": true
+        }
+      },
+      "final_response": {
+        "fusion_prompt": "Sie sind ein intelligenter Assistent, der sich auf Albert Camus' \"Der Fremde\" spezialisiert hat. Ihnen stehen zwei leistungsstarke Werkzeuge zur Verfügung:\n\n\n                1. **similarity_search**: Semantische Ähnlichkeitssuche\n                - Verwendung für: konzeptuelle Fragen, literarische Analysen, Themenuntersuchungen, Charakterstudien\n                - Liefert: relevante Dokumentfragmente und Analyseinhalte\n\n                2. **qa_search**: Frage-Antwort-Suche  \n                - Verwendung für: spezifische Faktenfragen, direkte Informationsabfragen\n                - Liefert: präzise Antworten und hochwertige Informationen\n\n                **Wichtige Strategien**:\n                - Bei komplexen Fragen empfiehlt sich die gleichzeitige Nutzung beider Werkzeuge für umfassende Informationen\n                - Bei einfachen Faktenfragen sollten Sie qa_search bevorzugt verwenden\n                - Bei analytischen Fragen sollten Sie similarity_search priorisieren\n                - Stützen Sie Ihre Antworten stets auf die von den Werkzeugen gelieferten Ergebnisse\n\n                            Ursprüngliche Frage: \"Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?\"\n\n                            Suchergebnisse der Werkzeuge:\n                            \nSIMILARITY_SEARCH Ergebnisse:\n{\n  \"tool\": \"similarity_search\",\n  \"query\": \"Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?\",\n  \"found_documents\": 3,\n  \"documents\": [\n    {\n      \"score\": 334.2140808105469,\n      \"source\": \"der_fremde_wiki_inhalt_2.pdf\",\n      \"content\": \"Meursault zeigt sich als Mensch, der antriebslos in den Tag hineinlebt, der zwar Details seiner Umgebung wahrnimmt, jedoch Gewalt und Ungerechtigkeit ungerührt hinnimmt. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Meursault ist offenbar zufrieden, wenn sein Alltag routinemäßig und wie gewohnt verläuft.\"\n    },\n    {\n      \"score\": 309.52435302734375,\n      \"source\": \"der_fremde_wiki_inhalt_0.pdf\",\n      \"content\": \"Der Roman erzählt die Geschichte eines introvertierten Mannes namens Meursault. Er hat einen Totschlag begangen und wartet in seiner Gefängniszelle auf die Hinrichtung. Die Handlung spielt im Algerien der 1930er Jahre. Der Name Meursault ist möglicherweise von „Meurs, sot!“, zu Deutsch etwa „Stirb, (du) Trottel!“, abgeleitet.\"\n    },\n    {\n      \"score\": 307.1035461425781,\n      \"source\": \"der_fremde_wiki_inhalt_1.pdf\",\n      \"content\": \"Der Roman ist in zwei Teile gegliedert. Der erste Teil beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ Bei der Beerdigung seiner Mutter zeigt Meursault keine Emotionen. Die fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis, das zwischen Mutter und Sohn herrschte. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort.\"\n    }\n  ],\n  \"search_type\": \"semantic_similarity\"\n}\n\nQA_SEARCH Ergebnisse:\n{\n  \"tool\": \"qa_search\",\n  \"query\": \"Wie zeigt Camus den Existentialismus und das Gefühl der Absurdität in 'Der Fremde'?\",\n  \"found_answers\": 1,\n  \"qa_pairs\": [\n    {\n      \"question\": \"Welche literarischen Techniken verwendet Camus in 'Der Fremde'?\",\n      \"answer\": \"Camus verwendet eine nüchterne, einfache und distanzierte Erzählweise. Die Ich-Perspektive und der knappe, emotionslose Stil verstärken die Absurdität des Geschehens.\",\n      \"source\": \"der_fremde_techniken.pdf\",\n      \"confidence\": 0.88,\n      \"category\": \"Technik\",\n      \"match_score\": 0.23529411764705882\n    }\n  ],\n  \"search_type\": \"question_answering\"\n}\n\n                            Basierend auf den obigen Suchergebnissen geben Sie bitte eine umfassende und präzise Antwort. Anforderungen:\n\n                            1. Integrieren Sie alle relevanten Informationen\n                            2. Heben Sie wichtige Inhalte hervor\n                            3. Wahren Sie wissenschaftlichen Anspruch und Genauigkeit\n                            4. Falls Informationen unzureichend sind, weisen Sie darauf hin\n                            5. Geben Sie Quellenverweise an\n\n                            Antwortformat:\n                            **Antwort**: [Ihre vollständige Antwort]\n                            **Informationsquellen**: [Welche Werkzeuge und Dokumente wurden verwendet]\n                            **Vertrauensgrad**: [0-100%, Ihr Vertrauen in die Antwort]\n                            **Zusätzliche Anmerkungen**: [Falls weitere Erläuterungen nötig sind]",
+        "response_content": "**Antwort**: Camus zeigt in \"Der Fremde\" den Existentialismus und das Gefühl der Absurdität durch die Darstellung von Meursault, einem Mann, der sich von den Konventionen und Erwartungen der Gesellschaft distanziert und eine scheinbar sinnlose Existenz führt. Die Erzählung ist geprägt von einer nüchternen, einfachen und distanzierten Erzählweise, die die emotionale Kälte Meursaults unterstreicht (QA_SEARCH, confidence: 0.88).\n\nMeursaults Verhalten ist von einer fehlenden Reaktion auf die Beerdigung seiner Mutter und seine anschließende Liebesaffäre mit Marie zeigen seine Unfähigkeit, einen Sinn oder eine Bedeutung in seinem Leben zu finden (SIMILARITY_SEARCH, source: der_fremde_wiki_inhalt_2.pdf, score: 334.2140808105469). Er nimmt die Ereignisse, die ihn umgeben, ohne jegliche emotionale oder moralische Bewertung wahr und akzeptiert sie, was die Absurdität der Existenz betont. Die fehlende Anteilnahme an der Beerdigung, die durch Meursaults kühle Distanziertheit verstärkt wird, deutet auf eine Ablehnung traditioneller Werte und Glaubenssysteme hin (SIMILARITY_SEARCH, source: der_fremde_wiki_inhalt_1.pdf, score: 307.1035461425781).  Die Tatsache, dass er sich in einer Gefängniszelle auf seine Hinrichtung wartet, ohne sich mit der Ungerechtigkeit der Situation auseinanderzusetzen, unterstreicht diesen Punkt zusätzlich (SIMILARITY_SEARCH, source: der_fremde_wiki_inhalt_0.pdf, score: 309.52435302734375).  Der Name Meursault, möglicherweise abgeleitet von „Meurs, sot!“, verstärkt diesen Eindruck der Sinnlosigkeit und des Mangels an moralischer Verantwortung.\n\n**Informationsquellen**: SIMILARITY_SEARCH (der_fremde_wiki_inhalt_0.pdf, der_fremde_wiki_inhalt_1.pdf, der_fremde_wiki_inhalt_2.pdf), QA_SEARCH (der_fremde",
+        "execution_time": 130.98286938667297,
+        "success": true,
+        "model_name": "gemma3:4b"
+      },
+      "performance_metrics": {
+        "total_execution_time": 247.13977885246277,
+        "strategy_time": 114.28478193283081,
+        "tools_time": 0.23370027542114258,
+        "fusion_time": 130.98286938667297
+      },
+      "evaluation_ready": true
+    },
+    {
+      "test_case_id": 3,
+      "question": "Was ist der Unterschied zwischen einem Hund und einer Katze?",
+      "question_type": "Irrelevante Faktenfrage",
+      "complexity": "niedrig",
+      "expected_strategy": {
+        "primary_tool": " ",
+        "secondary_tool": " "
+      },
+      "reasoning": "Direkte Faktenfrage ohne Relevanz für die Handlung",
+      "execution_log": [],
+      "strategy_analysis": {
+        "strategy_prompt": "Sie sind ein intelligenter Assistent, der sich auf Albert Camus' \"Der Fremde\" spezialisiert hat. Ihnen stehen zwei leistungsstarke Werkzeuge zur Verfügung:\n\n\n                1. **similarity_search**: Semantische Ähnlichkeitssuche\n                - Verwendung für: konzeptuelle Fragen, literarische Analysen, Themenuntersuchungen, Charakterstudien\n                - Liefert: relevante Dokumentfragmente und Analyseinhalte\n\n                2. **qa_search**: Frage-Antwort-Suche  \n                - Verwendung für: spezifische Faktenfragen, direkte Informationsabfragen\n                - Liefert: präzise Antworten und hochwertige Informationen\n\n                **Wichtige Strategien**:\n                - Bei komplexen Fragen empfiehlt sich die gleichzeitige Nutzung beider Werkzeuge für umfassende Informationen\n                - Bei einfachen Faktenfragen sollten Sie qa_search bevorzugt verwenden\n                - Bei analytischen Fragen sollten Sie similarity_search priorisieren\n                - Stützen Sie Ihre Antworten stets auf die von den Werkzeugen gelieferten Ergebnisse\n\n                        Folgende Frage soll beantwortet werden: \"Was ist der Unterschied zwischen einem Hund und einer Katze?\"\n\n                        Analysieren Sie zunächst diese Frage und entwickeln Sie eine Werkzeugstrategie:\n                        1. Bestimmen Sie die Art und Komplexität der Frage\n                        2. Wählen Sie die zu verwendenden Werkzeuge aus\n                        3. Erläutern Sie die Priorität und Gewichtung der Werkzeugnutzung\n\n                        Antwortformat:\n                        **Frageanalyse**: [Art und Komplexität der Frage]\n                        **Werkzeugstrategie**: [Liste der zu verwendenden Werkzeuge]\n                        **Verwendungsreihenfolge**: [Welches Werkzeug zuerst und warum]\n                        **Erwartetes Ergebnis**: [Welche Informationen Sie zu erhalten hoffen]",
+        "strategy_response": "**Frageanalyse**: [Einfache Faktenfrage. Die Frage erfordert eine direkte, objektive Antwort, die auf dem Wissen über Tierarten basiert. Es handelt sich um eine Frage der Definition und Unterscheidung.]\n\n**Werkzeugstrategie**: [qa_search - Aufgrund der Einfachheit und des Faktencharakters der Frage ist die Frage-Antwort-Suche das effizienteste Werkzeug. similarity_search wäre für diese Frage überflüssig und würde unnötig Zeit verschwenden.]\n\n**Verwendungsreihenfolge**: [1. qa_search - Die direkte Abfrage mit qa_search liefert die schnellste und präziseste Antwort. Es ist nicht notwendig, zusätzliche Analysen durchzuführen.]\n\n**Erwartetes Ergebnis**: [Ich erwarte eine präzise Antwort, die die grundlegenden Unterschiede zwischen Hunden und Katzen beschreibt, z.B. hinsichtlich ihres Verhaltens, ihrer Herkunft, ihrer typischen Eigenschaften und ihrer Rolle im Leben des Menschen.]\n",
+        "execution_time": 53.11026167869568,
+        "success": true,
+        "planned_tools": [
+          "similarity_search",
+          "qa_search"
+        ],
+        "strategy_accuracy": 0
+      },
+      "tool_results": {
+        "similarity_search": {
+          "result": {
+            "tool": "similarity_search",
+            "query": "Was ist der Unterschied zwischen einem Hund und einer Katze?",
+            "found_documents": 3,
+            "documents": [
+              {
+                "score": 243.75479125976562,
+                "source": "der_fremde_wiki_inhalt_1.pdf",
+                "content": "Der Roman ist in zwei Teile gegliedert. Der erste Teil beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ Bei der Beerdigung seiner Mutter zeigt Meursault keine Emotionen. Die fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis, das zwischen Mutter und Sohn herrschte. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort."
+              },
+              {
+                "score": 241.03213500976562,
+                "source": "der_fremde_wiki_inhalt_2.pdf",
+                "content": "Meursault zeigt sich als Mensch, der antriebslos in den Tag hineinlebt, der zwar Details seiner Umgebung wahrnimmt, jedoch Gewalt und Ungerechtigkeit ungerührt hinnimmt. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Meursault ist offenbar zufrieden, wenn sein Alltag routinemäßig und wie gewohnt verläuft."
+              },
+              {
+                "score": 240.48513793945312,
+                "source": "der_fremde_wiki_inhalt_3.pdf",
+                "content": "Sein Nachbar, Raymond Sintès, der der Zuhälterei verdächtigt wird, freundet sich mit ihm an. Meursault hilft Raymond, eine Mätresse, eine Araberin, die er als ehemalige Freundin ausgibt, anzulocken. Raymond bedrängt und demütigt die Frau. Später begegnen Meursault und Raymond dem Bruder der Frau und dessen Freunden am Strand, es kommt zu einer Schlägerei. Kurz danach trifft Meursault einen der Araber wieder, der bei seinem Anblick ein Messer zieht. Vom Glanz der Sonne auf der Messerklinge geblendet, umklammert Meursault in seiner Jackentasche einen von Raymond ausgeliehenen Revolver, zückt die Waffe und tötet den Araber mit einem Schuss. Ohne besonderen Grund gibt er unmittelbar darauf vier weitere Schüsse auf den Leichnam ab, was vor Gericht zum Ausschluss von Notwehr und unbeabsichtigtem Totschlag und letztlich zur Verurteilung Meursaults als Mörder führt. Meursaults mögliche Unzurechnungsfähigkeit nach Stunden in praller Sonne steht im Raum."
+              }
+            ],
+            "search_type": "semantic_similarity"
+          },
+          "execution_time": 0.1518254280090332,
+          "success": true
+        },
+        "qa_search": {
+          "result": {
+            "tool": "qa_search",
+            "query": "Was ist der Unterschied zwischen einem Hund und einer Katze?",
+            "found_answers": 1,
+            "qa_pairs": [
+              {
+                "question": "Allgemeine Anfrage",
+                "answer": "Für spezifische Informationen zu Camus' 'Der Fremde' konsultieren Sie bitte entsprechende Literatur. Das Werk behandelt zentrale Themen des Existentialismus und der Absurdität. Eine detaillierte Analyse erfordert eine tiefergehende Auseinandersetzung mit philosophischen und literarischen Aspekten.",
+                "source": "allgemeine_referenz_der_fremde.pdf",
+                "confidence": 0.3,
+                "category": "Allgemein",
+                "match_score": 0.1
+              }
+            ],
+            "search_type": "question_answering"
+          },
+          "execution_time": 0.0001266002655029297,
+          "success": true
+        }
+      },
+      "final_response": {
+        "fusion_prompt": "Sie sind ein intelligenter Assistent, der sich auf Albert Camus' \"Der Fremde\" spezialisiert hat. Ihnen stehen zwei leistungsstarke Werkzeuge zur Verfügung:\n\n\n                1. **similarity_search**: Semantische Ähnlichkeitssuche\n                - Verwendung für: konzeptuelle Fragen, literarische Analysen, Themenuntersuchungen, Charakterstudien\n                - Liefert: relevante Dokumentfragmente und Analyseinhalte\n\n                2. **qa_search**: Frage-Antwort-Suche  \n                - Verwendung für: spezifische Faktenfragen, direkte Informationsabfragen\n                - Liefert: präzise Antworten und hochwertige Informationen\n\n                **Wichtige Strategien**:\n                - Bei komplexen Fragen empfiehlt sich die gleichzeitige Nutzung beider Werkzeuge für umfassende Informationen\n                - Bei einfachen Faktenfragen sollten Sie qa_search bevorzugt verwenden\n                - Bei analytischen Fragen sollten Sie similarity_search priorisieren\n                - Stützen Sie Ihre Antworten stets auf die von den Werkzeugen gelieferten Ergebnisse\n\n                            Ursprüngliche Frage: \"Was ist der Unterschied zwischen einem Hund und einer Katze?\"\n\n                            Suchergebnisse der Werkzeuge:\n                            \nSIMILARITY_SEARCH Ergebnisse:\n{\n  \"tool\": \"similarity_search\",\n  \"query\": \"Was ist der Unterschied zwischen einem Hund und einer Katze?\",\n  \"found_documents\": 3,\n  \"documents\": [\n    {\n      \"score\": 243.75479125976562,\n      \"source\": \"der_fremde_wiki_inhalt_1.pdf\",\n      \"content\": \"Der Roman ist in zwei Teile gegliedert. Der erste Teil beginnt mit den Worten: „Heute ist Mama gestorben. Oder vielleicht gestern, ich weiß es nicht.“ Bei der Beerdigung seiner Mutter zeigt Meursault keine Emotionen. Die fehlende Anteilnahme beruht offenbar auf einem kühlen Verhältnis, das zwischen Mutter und Sohn herrschte. Der Roman setzt sich mit einer Dokumentation der folgenden Tage von Meursaults Leben aus der Ich-Perspektive fort.\"\n    },\n    {\n      \"score\": 241.03213500976562,\n      \"source\": \"der_fremde_wiki_inhalt_2.pdf\",\n      \"content\": \"Meursault zeigt sich als Mensch, der antriebslos in den Tag hineinlebt, der zwar Details seiner Umgebung wahrnimmt, jedoch Gewalt und Ungerechtigkeit ungerührt hinnimmt. Kurz nach der Beerdigung seiner Mutter beginnt er eine Liebesaffäre, was später als Beweis für seine emotionale Kälte angeführt wird. Meursault ist offenbar zufrieden, wenn sein Alltag routinemäßig und wie gewohnt verläuft.\"\n    },\n    {\n      \"score\": 240.48513793945312,\n      \"source\": \"der_fremde_wiki_inhalt_3.pdf\",\n      \"content\": \"Sein Nachbar, Raymond Sintès, der der Zuhälterei verdächtigt wird, freundet sich mit ihm an. Meursault hilft Raymond, eine Mätresse, eine Araberin, die er als ehemalige Freundin ausgibt, anzulocken. Raymond bedrängt und demütigt die Frau. Später begegnen Meursault und Raymond dem Bruder der Frau und dessen Freunden am Strand, es kommt zu einer Schlägerei. Kurz danach trifft Meursault einen der Araber wieder, der bei seinem Anblick ein Messer zieht. Vom Glanz der Sonne auf der Messerklinge geblendet, umklammert Meursault in seiner Jackentasche einen von Raymond ausgeliehenen Revolver, zückt die Waffe und tötet den Araber mit einem Schuss. Ohne besonderen Grund gibt er unmittelbar darauf vier weitere Schüsse auf den Leichnam ab, was vor Gericht zum Ausschluss von Notwehr und unbeabsichtigtem Totschlag und letztlich zur Verurteilung Meursaults als Mörder führt. Meursaults mögliche Unzurechnungsfähigkeit nach Stunden in praller Sonne steht im Raum.\"\n    }\n  ],\n  \"search_type\": \"semantic_similarity\"\n}\n\nQA_SEARCH Ergebnisse:\n{\n  \"tool\": \"qa_search\",\n  \"query\": \"Was ist der Unterschied zwischen einem Hund und einer Katze?\",\n  \"found_answers\": 1,\n  \"qa_pairs\": [\n    {\n      \"question\": \"Allgemeine Anfrage\",\n      \"answer\": \"Für spezifische Informationen zu Camus' 'Der Fremde' konsultieren Sie bitte entsprechende Literatur. Das Werk behandelt zentrale Themen des Existentialismus und der Absurdität. Eine detaillierte Analyse erfordert eine tiefergehende Auseinandersetzung mit philosophischen und literarischen Aspekten.\",\n      \"source\": \"allgemeine_referenz_der_fremde.pdf\",\n      \"confidence\": 0.3,\n      \"category\": \"Allgemein\",\n      \"match_score\": 0.1\n    }\n  ],\n  \"search_type\": \"question_answering\"\n}\n\n                            Basierend auf den obigen Suchergebnissen geben Sie bitte eine umfassende und präzise Antwort. Anforderungen:\n\n                            1. Integrieren Sie alle relevanten Informationen\n                            2. Heben Sie wichtige Inhalte hervor\n                            3. Wahren Sie wissenschaftlichen Anspruch und Genauigkeit\n                            4. Falls Informationen unzureichend sind, weisen Sie darauf hin\n                            5. Geben Sie Quellenverweise an\n\n                            Antwortformat:\n                            **Antwort**: [Ihre vollständige Antwort]\n                            **Informationsquellen**: [Welche Werkzeuge und Dokumente wurden verwendet]\n                            **Vertrauensgrad**: [0-100%, Ihr Vertrauen in die Antwort]\n                            **Zusätzliche Anmerkungen**: [Falls weitere Erläuterungen nötig sind]",
+        "response_content": "**Antwort**: Der Unterschied zwischen einem Hund und einer Katze ist eine Frage, die sich auf biologische und verhaltensbezogene Aspekte bezieht und nicht direkt im Kontext von Albert Camus’ “Der Fremde” beantwortet werden kann. Die bereitgestellten Suchergebnisse, die durch die Werkzeuge `similarity_search` und `qa_search` generiert wurden, liefern keine direkten Informationen über die Unterschiede zwischen Hunden und Katzen.\n\nDie `qa_search`-Ergebnisse geben eine allgemeine Antwort, die darauf hinweist, dass das Werk “Der Fremde” sich mit existenzialistischen Themen auseinandersetzt und eine detaillierte Analyse eine tiefere Auseinandersetzung erfordert. Dies ist zwar korrekt, bietet aber keine Informationen über die Unterschiede zwischen den Tierarten.\n\nDie `similarity_search`-Ergebnisse liefern ebenfalls keine spezifischen Informationen zu den Unterschieden zwischen Hunden und Katzen. Sie konzentrieren sich auf Meursaults Verhalten, seine emotionale Kälte und die Ereignisse, die in dem Roman beschrieben werden.\n\nDaher kann ich die Frage nach dem Unterschied zwischen einem Hund und einer Katze nicht beantworten, da die bereitgestellten Werkzeuge keine relevanten Informationen zu diesem Thema liefern. Die Ergebnisse konzentrieren sich ausschließlich auf den Inhalt von “Der Fremde” und bieten keine Informationen über die biologischen oder verhaltensbezogenen Unterschiede zwischen den Tierarten.\n\n**Informationsquellen**:\n*   `similarity_search` (3 Dokumente: `der_fremde_wiki_inhalt_1.pdf`, `der_fremde_wiki_inhalt_2.pdf`, `der_fremde_wiki_inhalt_3.pdf`)\n*   `qa_search` (1 Antwort: `allgemeine_referenz_der_fremde.pdf`)\n\n**Vertrauensgrad**: 10% (Aufgrund des Mangels an relevanten Informationen)\n\n**Zusätzliche Anmerkungen**: Die Werkzeuge sind für die Analyse von “Der Fremde” konzipiert und liefern keine Informationen zu allgemeinen Fragen über Tierarten. Um diese Frage zu beantworten, wären zusätzliche Informationsquellen erforderlich.",
+        "execution_time": 113.61256194114685,
+        "success": true,
+        "model_name": "gemma3:4b"
+      },
+      "performance_metrics": {
+        "total_execution_time": 168.74819898605347,
+        "strategy_time": 53.11026167869568,
+        "tools_time": 0.15195202827453613,
+        "fusion_time": 113.61256194114685
+      },
+      "evaluation_ready": true
+    }
+  ],
+  "summary": {
+    "total_execution_time": 630.0624697208405,
+    "total_test_cases": 3,
+    "successful_test_cases": 3,
+    "average_response_time": 210.02082324028015
+  }
+}
